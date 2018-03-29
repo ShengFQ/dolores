@@ -1,0 +1,251 @@
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8"><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta content=always name=referrer><title>轻应用JS桥API接口使用说明</title>
+</head>
+<body>
+<p><a name="top">轻应用JS桥API接口使用说明(本文档仅供内部app开发使用)</a></p>
+
+<p>API_V1.0
+这里案例:oa.com=192.168.16.223:9000/oa
+需要引入的js文件到用户界面:
+qingjs.js</p>
+
+<p>jquery_lastest.js</p>
+
+<h2>接口返回消息说明</h2>
+
+<table  class="table table-bordered table-striped table-condensed">
+   <tr>
+      <td>返回值字段</td>
+      <td>字段类型</td>
+      <td>字段说明</td>
+   </tr>
+   <tr>
+      <td>xxx</td>
+      <td>string</td>
+      <td>返回的消息文本</td>
+   </tr>
+</table>
+
+<h2>目录</h2>
+
+<h2><a NAME="userapp">轻应用</a></h2>
+
+<h3><a name="userapp_read">读取接口</a></h3>
+
+<h5>getPersonLoginID() 获取用户登录id</h5>
+
+<h5>url:mobileJsBridge. getPersonLoginID()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+text</p>
+
+<p>字段说明<br/></p>
+<table  class="table table-bordered table-striped table-condensed">
+   <tr>
+      <td>返回值字段</td>
+      <td>字段类型</td>
+      <td>字段说明</td>
+   </tr>
+   <tr>
+      <td>loginid</td>
+      <td>string</td>
+      <td>当前登录oa的用户loginid</td>
+   </tr>
+</table>
+
+<h5>getPersonInfo() 获取用户姓名</h5>
+
+<h5>url:mobileJsBridge. getPersonInfo()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+text</p>
+<p>字段说明<br/></p>
+
+<table>
+
+   <tr>
+      <td>返回值字段</td>
+      <td>字段类型</td>
+      <td>字段说明</td>
+   </tr>
+   <tr>
+      <td>username</td>
+      <td>string</td>
+      <td>当前登录oa的中文用户姓名</td>
+   </tr>
+</table>
+
+<h5>getPersonUID() 获取用户ID</h5>
+
+<h5>url:mobileJsBridge. getPersonUID()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+text</p>
+<p>字段说明<br/></p>
+
+<table>
+   <tr>
+      <td>返回值字段</td>
+      <td>字段类型</td>
+      <td>字段说明</td>
+   </tr>
+   <tr>
+      <td>userid</td>
+      <td>string</td>
+      <td>当前登录oa的用户ID</td>
+   </tr>
+</table>
+
+<h5>getPersonPwd() 获取oa登录用户加密密码</h5>
+
+<h5>url:mobileJsBridge. getPersonPwd() //通过MD5加密的登录用户密码</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+text</p>
+
+<p>字段说明<br/></p>
+
+<table>
+   <tr>
+      <td>返回值字段</td>
+      <td>字段类型</td>
+      <td>字段说明</td>
+   </tr>
+   <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>当前登录oa的密码</td>
+   </tr>
+</table>
+
+<h5>close() 关闭当前窗口</h5>
+
+<h5>url:mobileJsBridge.close()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+无</p>
+
+<h5>hideTitleBar() 隐藏导航栏</h5>
+
+<h5>url:mobileJsBridge. hideTitleBar()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+无</p>
+
+<h5>showTitleBar() 显示导航栏</h5>
+
+<h5>url:mobileJsBridge. showTitleBar()</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无
+返回结果<br/>
+无</p>
+
+<h5>setTitleBar(string title) 设置导航栏标题</h5>
+
+<h5>url:mobileJsBridge. setTitleBar(string title)</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+string title 标题
+返回结果<br/>
+无</p>
+
+<h5>showToast(string msg) 弹出短时间显示消息</h5>
+
+<h5>url:mobileJsBridge. showToast(string msg)</h5>
+
+<p>支持格式<br/>
+javascript<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+string message
+返回结果<br/>
+无</p>
+
+<h5>第三方轻应用服务端获取oa的用户名和加密后密码</h5>
+
+<h5>url:http://lightapp_url?username=xxx&amp;userpwd=yyy&amp;userid=zzz&amp;loginid=aaa</h5>
+
+<p>支持格式<br/>
+java<br/>
+HTTP请求方式<br/>
+GET<br/>
+是否需要登录<br/>
+是<br/>
+请求参数<br/>
+无</p>
+
+<p>返回结果<br/>
+用户姓名:request.getparameter("username");</p>
+
+<p>密码:request.getparameter("userpwd");</p>
+<p>用户id:request.getparameter("userid");</p>
+
+<p>用户loginid:request.getparameter("loginid");
+<a href="#top">回顶部</a></p>
+</body>
+</html>
