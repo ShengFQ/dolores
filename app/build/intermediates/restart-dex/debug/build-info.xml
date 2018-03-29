@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="34600833663635"
+    token="3944945673411327101"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="3102" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="195" />
+    <task
+        name="verifier"
+        duration="7" />
+
+    <artifact
+        location="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="34600833663635"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

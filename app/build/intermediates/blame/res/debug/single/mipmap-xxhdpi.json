@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_ding_s.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_ding_s.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_mine_s.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_mine_s.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_mine.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_mine.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_book_s.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_book_s.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_arrow_left.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_arrow_left.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_book.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_book.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_call.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_call.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_tab_ding.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_tab_ding.png"
+    },
+    {
+        "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    }
+]

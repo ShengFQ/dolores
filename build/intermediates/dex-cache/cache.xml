@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-7.0.1_9506bf9223d089cb5f8e583545f1cad422fac359/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.18/38da306aafee11459cd935a01d2c92a98dc670a4/library-1.0.18.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="38da306aafee11459cd935a01d2c92a98dc670a4">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-1.0.18_002fb358f2a635e64deb1e00d3b6125b28a25835/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-26.0.0-alpha1_0e17442b1cac3b22d01b7e8f36cfcf47bb4db1fd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-26.0.0-alpha1_d89b54900362663a9a61408d66867664d3b1810c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="23ce15d72c7b9361c9067051ffe5e8c34ca9581a">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_45f1aff7d654607db4dfa5054c5c73d95bcb2082/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/program/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_0177bfeaff1a05201d17083793af88e61af6874e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-26.0.0-alpha1_1d3be6e3d743c10e1121414aded39066cadd6cb5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-26.0.0-alpha1_fb719f36f6fd354fc01792ec1461d2e494f820d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-26.0.0-alpha1_12277b265d22a5a9afa531c2a5f9dacfddb6e01f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-26.0.0-alpha1_8fe4c2b0ce38592e9089c2d34964b893fce017e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-26.0.0-alpha1_42d4e411d9c3cbeafb87b0fecfff07acc3483ef5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_34b6d2d12e7b786953330cb97f331d754c612785/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-26.0.0-alpha1_c30c8c008ece9e782df1546fd36d3e6e40ea339a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-26.0.0-alpha1_e3e035d6affd9162628696a451fc2ed8b9e3ed40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8aefc0dab033ce845dc83d72f395d9aa16f71048">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a8d25def0a40143da182b211d0c1571b3f4b1c6c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/exploded-aar/com.tencent.bugly/crashreport/2.6.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="56b24cbd303368a3dc7a0cf1efbeb4f59b9ad742">
+        <dex dex="/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.tencent.bugly-crashreport-2.6.6.1_1cc6ef5b78ced4accec550e6eb48cabc50b615d1/classes.dex" />
+    </item>
+
+</items>

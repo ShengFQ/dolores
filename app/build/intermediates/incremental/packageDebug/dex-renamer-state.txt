@@ -1,0 +1,7 @@
+#Thu Mar 29 18:28:50 CST 2018
+base.0=/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_45f1aff7d654607db4dfa5054c5c73d95bcb2082
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a8d25def0a40143da182b211d0c1571b3f4b1c6c/classes.dex
+base.1=/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a8d25def0a40143da182b211d0c1571b3f4b1c6c
+file.0=/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_45f1aff7d654607db4dfa5054c5c73d95bcb2082/classes.dex
