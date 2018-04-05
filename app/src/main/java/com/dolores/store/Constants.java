@@ -3,9 +3,13 @@ package com.dolores.store;
 public class Constants {
 
     public static final String PACKAGE_NAME = "com.dolores.store";
-
+    public static final String APPID_BUGLY="900002908";
     private static final String VALUE_ENVIRON_TEST = "http://www.sznoda.com:7890/oa/mobile/";
     private static final String VALUE_ENVIRON_RELEASE = "http://www.sznoda.com:7890/oa/mobile/";
+    public static final String EASEMOB_APPKEY="1100180329228561#dolores";
+    private static final String EASEMOB_ORGNAME="1100180329228561";
+    private static final String EASEMOB_APPNAME="dolores";
+
 
     public static String BASE_URL = null;
 

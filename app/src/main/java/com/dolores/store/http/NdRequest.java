@@ -1,7 +1,10 @@
 package com.dolores.store.http;
 
+import com.android.volley.Request;
+
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -9,11 +12,9 @@ import java.util.Map;
  */
 
 public abstract class NdRequest {
-    // 纯粹的POST
-    public static final int MODE_PURE_JSON = 2;
-    // 键值对模式
-    public static final int MODE_KEY_VALUE = 1;
-    protected int mode = MODE_KEY_VALUE;
+    protected int mMethod= METHOD_POST;
+    public static final int METHOD_POST=Request.Method.POST;
+    public static final int METHOD_GET=Request.Method.GET;
     public abstract int getMethod();
 
     public abstract String getUrl();

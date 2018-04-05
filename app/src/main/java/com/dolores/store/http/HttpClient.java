@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * volley lib
  * */
 public class HttpClient {
-    private static RequestQueue requestQueue= Volley.newRequestQueue(DoloresApplication.getmApplicationContext());
+    private static RequestQueue requestQueue=newRequestQueue();
     private static AtomicInteger counter = new AtomicInteger(0);
     private boolean useCache = false;
 

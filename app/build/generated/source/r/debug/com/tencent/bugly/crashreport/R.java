@@ -8,6 +8,6 @@ package com.tencent.bugly.crashreport;
 
 public final class R {
 	public static final class string {
-		public static final int app_name = 0x7f06002a;
+		public static final int app_name = 0x7f06015b;
 	}
 }

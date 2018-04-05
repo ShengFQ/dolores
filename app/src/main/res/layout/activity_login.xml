@@ -73,12 +73,12 @@
         <include layout="@layout/layout_line"/>
 
         <Button
-            android:id="@+id/btn_ok"
+            android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/sp_round2_green"
-            android:text="@string/action_ok"
+            android:text="@string/action_login"
             android:textColor="@color/color_white"
             android:textSize="@dimen/normal"
             android:textStyle="bold"/>

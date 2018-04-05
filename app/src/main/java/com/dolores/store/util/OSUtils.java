@@ -9,6 +9,10 @@ import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
 
+import com.dolores.store.Constants;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMOptions;
+import com.hyphenate.easeui.EaseUI;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.io.BufferedReader;
@@ -21,7 +25,8 @@ import java.util.List;
  * APP shell壳常量
  * */
 public class OSUtils {
-    private static final String APPID_BUGLY="900002908";
+
+
     public static String getVersionName(Context context) {
         if (context == null) return "";
         PackageManager packageManager = context.getPackageManager();
@@ -65,7 +70,6 @@ public class OSUtils {
         return Build.VERSION.SDK_INT>=Build.VERSION_CODES.FROYO;
     }
 
-
     /**
      * 初始化crash report package
      * */
@@ -76,11 +80,16 @@ public class OSUtils {
         String processName=getProcessName(android.os.Process.myPid());
         CrashReport.UserStrategy strategy=new CrashReport.UserStrategy(context);
         strategy.setUploadProcess(processName==null || processName.equals(packageName));
-        CrashReport.initCrashReport(context,APPID_BUGLY,true,strategy);
-        if(processName==null || processName.equals(packageName)){
-            //在UI主线程中开启vpn sdk 初始化
+        CrashReport.initCrashReport(context, Constants.APPID_BUGLY,true,strategy);
 
-        }
+    }
+
+    public static void initEaseSDK(Context context){
+        EMOptions options = new EMOptions();
+        options.setAcceptInvitationAlways(false);
+        options.setAppKey(Constants.EASEMOB_APPKEY);
+        EaseUI.getInstance().init(context,options);
+        EMClient.getInstance().setDebugMode(true);//debug module
     }
 
     /**

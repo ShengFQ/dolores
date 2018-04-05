@@ -49,13 +49,14 @@ public class GsonRequest<T> extends Request<T> {
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
         headers.put("Content-Type", "application/json");
+        headers.put("Accept","application/json");
         return headers != null ? headers : super.getHeaders();
     }
 
 
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
-        return mPostParam;
+        return mPostParam !=null? mPostParam:super.getParams();
     }
 
     @Override

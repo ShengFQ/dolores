@@ -18,14 +18,11 @@ public class DoloresApplication extends Application {
     public void onCreate() {
         super.onCreate();
         this.mApplicationContext=getApplicationContext();
-        String processName = OSUtils.getProcessName(this, android.os.Process.myPid());
-        if (processName.equals(Constants.PACKAGE_NAME)) {
             mSharePref = SharePref.getInstance(SharePrefConstant.PREF_NAME, this);
             Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(this));
-            //httpClient = HttpClient.newInstance(this);
             //tencent bugly crash report framework init
             OSUtils.initCrashReport(mApplicationContext);
-        }
+            OSUtils.initEaseSDK(mApplicationContext);
     }
     /**
      * get global Context Object

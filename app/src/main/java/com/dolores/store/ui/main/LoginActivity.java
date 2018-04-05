@@ -15,7 +15,11 @@ import com.dolores.store.http.NdResponse;
 import com.dolores.store.http.NetworkTask;
 import com.dolores.store.model.User;
 import com.dolores.store.ui.base.BaseActivity;
+import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,16 +28,22 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.dolores.store.R.id.et_password;
+
 public class LoginActivity extends BaseActivity {
     private final String TAG=LoginActivity.class.getSimpleName();
     @Bind(R.id.et_mobile)
     EditText etMobile;
-    @Bind(R.id.et_password)
+    @Bind(et_password)
     EditText etPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(EMClient.getInstance().isLoggedInBefore()){
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            return;
+        }
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         initTitle();
@@ -44,22 +54,22 @@ public class LoginActivity extends BaseActivity {
         TitleUtils.setTitle(this, R.string.action_login);
     }
 
-    @OnClick({R.id.btn_ok, R.id.tv_register})
+    @OnClick({R.id.btn_sign_in, R.id.tv_register})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_ok:
-                postLogin("admin", "123456");
+            case R.id.btn_sign_in:
+                postLogin();
                 break;
             case R.id.tv_register:
+                postRegister();
                 break;
         }
     }
 
-    private void postLogin(String username, String password) {
-        Map<String, String> map = new HashMap<>();
-        map.put("loginId", username);
-        map.put("passwd", password);
-
+    private void postRegister(){
+        startActivityForResult(new Intent(this, RegisterActivity.class), 0);
+    }
+    private void postLogin() {
         /*StringRequest request = new StringRequest(Constants.LOGIN_URL, Request.Method.POST, map, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -72,47 +82,32 @@ public class LoginActivity extends BaseActivity {
             }
         });
         DoloresApplication.httpClient.addRequest(request);*/
-       /* NetworkTask<Object> networkTask=new NetworkTask<Object>();
-        NdRequest request=new NdRequest() {
+        EMClient.getInstance().login(etMobile.getText().toString().trim(),etPassword.getText().toString().trim(),new EMCallBack(){
+
             @Override
-            public int getMethod() {
-                return Request.Method.POST;
+            public void onSuccess() {
+                LogUtils.i(new StringBuffer("登录成功").toString());
+
+                // ** manually load all local groups and conversation
+                EMClient.getInstance().groupManager().loadAllGroups();
+                EMClient.getInstance().chatManager().loadAllConversations();
+
+
+                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
 
             @Override
-            public String getUrl() {
-                return Constants.getBaseUrl()+Constants.LOGIN_URL;
-            }
-
-            public Map<String,String> getPostParams(){
-                return null;
-            }
-        };
-        NdResponse<Object> response=new NdResponse<Object>() {
-            @Override
-            public void processData(Object response) {
-                Log.v(TAG,response.toString());
+            public void onError(int code, String error) {
+                LogUtils.e(new StringBuffer("登录出错").append("code ").append(code).append("error ").append(error).toString());
             }
 
             @Override
-            public void processError(Object error) {
+            public void onProgress(int progress, String status) {
 
             }
+        });
 
-            @Override
-            public Class getResponseDataClass() {
-                return Object.class;
-            }
-        };
-        AsynCallback<NdResponse> callback=new AsynCallback<NdResponse>() {
-            @Override
-            public void callback(NdResponse r) {
-
-            }
-        };
-        networkTask.startHttpTask(request,response,callback);*/
-        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

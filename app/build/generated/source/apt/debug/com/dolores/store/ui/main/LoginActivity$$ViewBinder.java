@@ -8,11 +8,11 @@ import butterknife.ButterKnife.ViewBinder;
 public class LoginActivity$$ViewBinder<T extends com.dolores.store.ui.main.LoginActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131427415, "field 'etMobile'");
-    target.etMobile = finder.castView(view, 2131427415, "field 'etMobile'");
-    view = finder.findRequiredView(source, 2131427416, "field 'etPassword'");
-    target.etPassword = finder.castView(view, 2131427416, "field 'etPassword'");
-    view = finder.findRequiredView(source, 2131427417, "method 'onViewClicked'");
+    view = finder.findRequiredView(source, 2131427417, "field 'etMobile'");
+    target.etMobile = finder.castView(view, 2131427417, "field 'etMobile'");
+    view = finder.findRequiredView(source, 2131427418, "field 'etPassword'");
+    target.etPassword = finder.castView(view, 2131427418, "field 'etPassword'");
+    view = finder.findRequiredView(source, 2131427419, "method 'onViewClicked'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
         @Override public void doClick(
@@ -21,7 +21,7 @@ public class LoginActivity$$ViewBinder<T extends com.dolores.store.ui.main.Login
           target.onViewClicked(p0);
         }
       });
-    view = finder.findRequiredView(source, 2131427418, "method 'onViewClicked'");
+    view = finder.findRequiredView(source, 2131427420, "method 'onViewClicked'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
         @Override public void doClick(

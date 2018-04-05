@@ -25,12 +25,13 @@ public class StringRequest extends Request<String> {
 
     private Map<String, String> mMap;
     private Listener<String> mListener;
-
-    public StringRequest(String url, Map<String, String> map, Listener<String> listener, ErrorListener errorListener) {
-        super(Method.GET, Constants.BASE_URL + url, errorListener);
+    private  Map<String, String> headers;
+    public StringRequest(int method,String url, Map<String,String> header,Map<String, String> params, Listener<String> listener, ErrorListener errorListener) {
+        super(method, Constants.BASE_URL + url, errorListener);
         super.setShouldCache(false);
         mListener = listener;
-        mMap = map;
+        headers=header;
+        mMap = params;
     }
 
     public StringRequest(String url, int requestType, Map<String, String> map, Listener<String> listener, ErrorListener errorListener) {
@@ -42,7 +43,7 @@ public class StringRequest extends Request<String> {
 
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
-        return mMap;
+        return mMap != null ? mMap : super.getParams();
     }
 
     @Override
@@ -97,7 +98,6 @@ public class StringRequest extends Request<String> {
 
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
-        Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         return headers;
     }
