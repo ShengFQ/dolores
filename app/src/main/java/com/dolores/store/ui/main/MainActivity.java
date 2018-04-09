@@ -5,17 +5,23 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dolores.store.R;
 import com.dolores.store.ui.base.BaseActivity;
+import com.hyphenate.chat.EMClient;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
-
+    @Bind(R.id.unread_msg_number)
+    TextView unreadLabel;
+    // textview for unread event message
+    @Bind(R.id.unread_address_number)
+     TextView unreadAddressLable;
     @Bind(R.id.ding_layout)
     RelativeLayout dingLayout;
     @Bind(R.id.book_layout)
@@ -26,15 +32,32 @@ public class MainActivity extends BaseActivity {
     private BookFragment bookFragment;
     private MineFragment mineFragment;
     private long exitTime;
+    // user logged into another device
+    public boolean isConflict = false;
+    // user account was removed
+    private boolean isCurrentAccountRemoved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //TODO 电池性能优化白名单
+        //TODO 如果账号在其他机器上登录或者被删除的话,UI线程还在继续使用,踢出登录功能
+        //TODO 单账号多机器登录冲突
+        //TODO 运行时动态权限申请
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         switchFragment(0);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    /**
+     * 切换fragment页签
+     * */
     private void switchFragment(int which) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (dingFragment != null) {

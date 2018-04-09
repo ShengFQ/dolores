@@ -84,14 +84,6 @@ public class OSUtils {
 
     }
 
-    public static void initEaseSDK(Context context){
-        EMOptions options = new EMOptions();
-        options.setAcceptInvitationAlways(false);
-        options.setAppKey(Constants.EASEMOB_APPKEY);
-        EaseUI.getInstance().init(context,options);
-        EMClient.getInstance().setDebugMode(true);//debug module
-    }
-
     /**
      * 获取APP进程号
      * */

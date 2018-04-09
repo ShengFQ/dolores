@@ -18,11 +18,11 @@ import butterknife.ButterKnife;
 
 public class RegisterActivity extends BaseActivity {
     @Bind(R.id.username)
-    private EditText userNameEditText;
+     EditText userNameEditText;
     @Bind(R.id.password)
-    private EditText passwordEditText;
+     EditText passwordEditText;
     @Bind(R.id.confirm_password)
-    private EditText confirmPwdEditText;
+     EditText confirmPwdEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

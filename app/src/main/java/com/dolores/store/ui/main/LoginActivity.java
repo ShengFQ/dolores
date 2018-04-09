@@ -1,28 +1,23 @@
 package com.dolores.store.ui.main;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.dolores.store.Constants;
+import com.dolores.store.DoloresApplication;
 import com.dolores.store.R;
-import com.dolores.store.http.AsynCallback;
-import com.dolores.store.http.NdRequest;
-import com.dolores.store.http.NdResponse;
-import com.dolores.store.http.NetworkTask;
-import com.dolores.store.model.User;
 import com.dolores.store.ui.base.BaseActivity;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.exceptions.HyphenateException;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.hyphenate.easeui.utils.EaseCommonUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,7 +31,8 @@ public class LoginActivity extends BaseActivity {
     EditText etMobile;
     @Bind(et_password)
     EditText etPassword;
-
+    private boolean progressShow;
+    private boolean autoLogin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +78,35 @@ public class LoginActivity extends BaseActivity {
             }
         });
         DoloresApplication.httpClient.addRequest(request);*/
+        if (!EaseCommonUtils.isNetWorkConnected(this)) {
+            Toast.makeText(this, R.string.network_isnot_available, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String currentUsername = etMobile.getText().toString().trim();
+        String currentPassword = etPassword.getText().toString().trim();
+
+        if (TextUtils.isEmpty(currentUsername)) {
+            Toast.makeText(this, R.string.User_name_cannot_be_empty, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(currentPassword)) {
+            Toast.makeText(this, R.string.Password_cannot_be_empty, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        progressShow = true;
+        final ProgressDialog pd = new ProgressDialog(LoginActivity.this);
+        pd.setCanceledOnTouchOutside(false);
+        pd.setOnCancelListener(new DialogInterface.OnCancelListener() {
+
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                Log.d(TAG, "EMClient.getInstance().onCancel");
+                progressShow = false;
+            }
+        });
+        pd.setMessage(getString(R.string.Is_landing));
+        pd.show();
         EMClient.getInstance().login(etMobile.getText().toString().trim(),etPassword.getText().toString().trim(),new EMCallBack(){
 
             @Override
@@ -91,7 +116,12 @@ public class LoginActivity extends BaseActivity {
                 // ** manually load all local groups and conversation
                 EMClient.getInstance().groupManager().loadAllGroups();
                 EMClient.getInstance().chatManager().loadAllConversations();
-
+                // update current user's display name for APNs
+                boolean updatenick = EMClient.getInstance().pushManager().updatePushNickname(
+                        DoloresApplication.currentUserNick.trim());
+                if (!updatenick) {
+                    LogUtils.e("update current user nick fail");
+                }
 
                 Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(intent);

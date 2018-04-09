@@ -14,15 +14,17 @@ public class DoloresApplication extends Application {
    // public static HttpClient httpClient = null;
     //global Context
     public static Context mApplicationContext=null;
+
+    public static String currentUserNick = "";
     @Override
     public void onCreate() {
         super.onCreate();
-        this.mApplicationContext=getApplicationContext();
+        this.mApplicationContext=this;
             mSharePref = SharePref.getInstance(SharePrefConstant.PREF_NAME, this);
             Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(this));
             //tencent bugly crash report framework init
             OSUtils.initCrashReport(mApplicationContext);
-            OSUtils.initEaseSDK(mApplicationContext);
+            DoloHelper.getInstance().init(mApplicationContext);
     }
     /**
      * get global Context Object
