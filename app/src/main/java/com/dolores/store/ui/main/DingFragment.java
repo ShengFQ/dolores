@@ -7,10 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dolores.store.R;
+import com.hyphenate.easeui.ui.EaseConversationListFragment;
 
 import butterknife.ButterKnife;
-
-public class DingFragment extends Fragment {
+/**
+ *
+ * Conversation Fragment by shengfq
+ * h会话fragment
+ * */
+public class DingFragment extends EaseConversationListFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

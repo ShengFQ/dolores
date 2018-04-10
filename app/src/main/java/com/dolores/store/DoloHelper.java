@@ -1,5 +1,6 @@
 package com.dolores.store;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.dolores.store.db.DBManager;
 import com.dolores.store.db.InviteMessgeDao;
 import com.dolores.store.db.UserDao;
 import com.dolores.store.domain.EmojiconExampleGroupData;
@@ -772,7 +774,29 @@ public class DoloHelper {
     public DoloModel getDoloModel(){
         return (DoloModel) doloModel;
     }
+    /**
+     * update contact list
+     *
+     * @param aContactList
+     */
+    public void setContactList(Map<String, EaseUser> aContactList) {
+        if(aContactList == null){
+            if (contactList != null) {
+                contactList.clear();
+            }
+            return;
+        }
 
+        contactList = aContactList;
+    }
+
+    /**
+     * save single contact
+     */
+    public void saveContact(EaseUser user){
+        contactList.put(user.getUsername(), user);
+        doloModel.saveContact(user);
+    }
     public void setRobotList(Map<String, RobotUser> robotList) {
         this.robotList = robotList;
     }
@@ -1534,5 +1558,78 @@ public class DoloHelper {
             }
         }      
         
+    }
+    /**
+     * logout
+     *
+     * @param unbindDeviceToken
+     *            whether you need unbind your device token
+     * @param callback
+     *            callback
+     */
+    public void logout(boolean unbindDeviceToken, final EMCallBack callback) {
+        //endCall();
+        Log.d(TAG, "logout: " + unbindDeviceToken);
+        EMClient.getInstance().logout(unbindDeviceToken, new EMCallBack() {
+
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "logout: onSuccess");
+                reset();
+                if (callback != null) {
+                    callback.onSuccess();
+                }
+
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+                if (callback != null) {
+                    callback.onProgress(progress, status);
+                }
+            }
+
+            @Override
+            public void onError(int code, String error) {
+                Log.d(TAG, "logout: onSuccess");
+                reset();
+                if (callback != null) {
+                    callback.onError(code, error);
+                }
+            }
+        });
+    }
+    synchronized void reset(){
+        isSyncingGroupsWithServer = false;
+        isSyncingContactsWithServer = false;
+        isSyncingBlackListWithServer = false;
+
+        doloModel.setGroupsSynced(false);
+        doloModel.setContactSynced(false);
+        doloModel.setBlacklistSynced(false);
+
+        isGroupsSyncedWithServer = false;
+        isContactsSyncedWithServer = false;
+        isBlackListSyncedWithServer = false;
+
+        isGroupAndContactListenerRegisted = false;
+
+        setContactList(null);
+        setRobotList(null);
+        getUserProfileManager().reset();
+        DBManager.getInstance().closeDB();
+    }
+
+    /**
+     * 将注册了监听器的activity添加到activity全局队列,销毁的时候统一管理
+     * */
+    public void pushActivity(Activity activity) {
+        easeUI.pushActivity(activity);
+    }
+    /**
+     * 将注册了监听器的activity移除activity全局队列,销毁的时候统一管理
+     * */
+    public void popActivity(Activity activity) {
+        easeUI.popActivity(activity);
     }
 }

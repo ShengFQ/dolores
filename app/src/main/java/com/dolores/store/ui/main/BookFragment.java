@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import com.dolores.store.R;
 
 import butterknife.ButterKnife;
-
+/**
+ * ContactList Fragment
+ * */
 public class BookFragment extends Fragment {
 
     @Override

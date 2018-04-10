@@ -73,4 +73,10 @@ public class UserProfileManager {
             listener.onSyncComplete(success);
         }
     }
+
+    public synchronized void reset() {
+        isSyncingContactInfosWithServer = false;
+        currentUser = null;
+        PreferenceManager.getInstance().removeCurrentUserInfo();
+    }
 }

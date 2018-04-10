@@ -18,7 +18,10 @@ import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * create  by shengfq
+ * 负责数据库层级的IO操作
+ * */
 public class DBManager {
     static private DBManager dbMgr = new DBManager();
     private DbOpenHelper dbHelper;
@@ -42,7 +45,7 @@ public class DBManager {
     synchronized public void saveContactList(List<EaseUser> contactList) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if (db.isOpen()) {
-            db.delete(UserDao.TABLE_NAME, null, null);
+            db.delete(UserDao.USERS_TABLE_NAME, null, null);
             for (EaseUser user : contactList) {
                 ContentValues values = new ContentValues();
                 values.put(UserDao.COLUMN_NAME_ID, user.getUsername());
@@ -50,7 +53,7 @@ public class DBManager {
                     values.put(UserDao.COLUMN_NAME_NICK, user.getNick());
                 if(user.getAvatar() != null)
                     values.put(UserDao.COLUMN_NAME_AVATAR, user.getAvatar());
-                db.replace(UserDao.TABLE_NAME, null, values);
+                db.replace(UserDao.USERS_TABLE_NAME, null, values);
             }
         }
     }
@@ -64,7 +67,7 @@ public class DBManager {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Map<String, EaseUser> users = new Hashtable<String, EaseUser>();
         if (db.isOpen()) {
-            Cursor cursor = db.rawQuery("select * from " + UserDao.TABLE_NAME /* + " desc" */, null);
+            Cursor cursor = db.rawQuery("select * from " + UserDao.USERS_TABLE_NAME /* + " desc" */, null);
             while (cursor.moveToNext()) {
                 String username = cursor.getString(cursor.getColumnIndex(UserDao.COLUMN_NAME_ID));
                 String nick = cursor.getString(cursor.getColumnIndex(UserDao.COLUMN_NAME_NICK));
@@ -92,7 +95,7 @@ public class DBManager {
     synchronized public void deleteContact(String username){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if(db.isOpen()){
-            db.delete(UserDao.TABLE_NAME, UserDao.COLUMN_NAME_ID + " = ?", new String[]{username});
+            db.delete(UserDao.USERS_TABLE_NAME, UserDao.COLUMN_NAME_ID + " = ?", new String[]{username});
         }
     }
     
@@ -109,7 +112,7 @@ public class DBManager {
         if(user.getAvatar() != null)
             values.put(UserDao.COLUMN_NAME_AVATAR, user.getAvatar());
         if(db.isOpen()){
-            db.replace(UserDao.TABLE_NAME, null, values);
+            db.replace(UserDao.USERS_TABLE_NAME, null, values);
         }
     }
     

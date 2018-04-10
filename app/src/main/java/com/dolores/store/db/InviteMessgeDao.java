@@ -71,4 +71,9 @@ public class InviteMessgeDao {
     public void deleteMessage(String from){
         DBManager.getInstance().deleteMessage(from);
     }
+
+    public int getUnreadMessagesCount(){
+        return DBManager.getInstance().getUnreadNotifyCount();
+    }
+
 }

@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import com.dolores.store.R;
 
 import butterknife.ButterKnife;
-
+/**
+ * Setting Fragment
+ * */
 public class MineFragment extends Fragment {
 
     @Override

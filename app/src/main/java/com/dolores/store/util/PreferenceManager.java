@@ -161,5 +161,9 @@ public class PreferenceManager {
     public boolean isBacklistSynced(){
         return mSharedPreferences.getBoolean(SHARED_KEY_SETTING_BALCKLIST_SYNCED, false);
     }
-
+    public void removeCurrentUserInfo() {
+        editor.remove(SHARED_KEY_CURRENTUSER_NICK);
+        editor.remove(SHARED_KEY_CURRENTUSER_AVATAR);
+        editor.apply();
+    }
 }

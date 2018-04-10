@@ -6,9 +6,11 @@ import com.hyphenate.easeui.domain.EaseUser;
 import com.dolores.store.domain.RobotUser;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 负责业务渠道内的DB CRUD封装
+ * */
 public class UserDao {
-	public static final String TABLE_NAME = "uers";
+	public static final String USERS_TABLE_NAME = "users";
 	public static final String COLUMN_NAME_ID = "username";
 	public static final String COLUMN_NAME_NICK = "nick";
 	public static final String COLUMN_NAME_AVATAR = "avatar";
