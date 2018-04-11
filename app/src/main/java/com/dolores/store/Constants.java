@@ -11,8 +11,8 @@ public class Constants extends EaseConstant {
     public static final String EASEMOB_APPKEY="1100180329228561#dolores";
     public static final String EASEMOB_ORGNAME="1100180329228561";
     public static final String EASEMOB_APPNAME="dolores";
-    public static final String APPID_MIPUSH="2882303761517426801";
-    public static final String APPKEY_MIPUSH="5381742660801";
+    public static final String APPID_MIPUSH="2882303761517764189";
+    public static final String APPKEY_MIPUSH="5401776414189";
 
     //from easeuidemo
     public static final String NEW_FRIENDS_USERNAME = "item_new_friends";

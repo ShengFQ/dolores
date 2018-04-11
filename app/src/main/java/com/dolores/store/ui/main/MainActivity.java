@@ -64,7 +64,7 @@ public class MainActivity extends EBaseActivity {
     private LocalBroadcastManager broadcastManager;
     private InviteMessgeDao inviteMessgeDao;
 
-    private int currentTabIndex;//当前的TAB视图
+    private int currentTabIndex=0;//当前的TAB视图
     private final int TAB_INDEX_CONVERSATION=0;
     private final int TAB_INDEX_CONTACT=1;
     private final int TAB_INDEX_SETTING=2;
@@ -75,13 +75,13 @@ public class MainActivity extends EBaseActivity {
         //TODO 电池性能优化白名单
         //TODO 如果账号在其他机器上登录或者被删除的话,UI线程还在继续使用,踢出登录功能
         //TODO 单账号多机器登录冲突
-        //TODO 运行时动态权限申请
+        //运行时动态权限申请
         requestPermissions();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         switchFragment(0);
         inviteMessgeDao = new InviteMessgeDao(this);
-        //TODO showExceptionDialogFromIntent 由于后台或其他UI传递过来的异常处理
+        //由于后台或其他UI传递过来的异常处理
         showExceptionDialogFromIntent(getIntent());
         //注册广播接收器接收UI变更群组,联系人,黑名单的事件
         registerBroadcastReceiver();
@@ -100,16 +100,16 @@ public class MainActivity extends EBaseActivity {
             public void onReceive(Context context, Intent intent) {
                 updateUnreadLabel();
                 updateUnreadAddressLable();
-                /*if (currentTabIndex == 0) {
+                if (currentTabIndex == TAB_INDEX_CONVERSATION) {
                     // refresh conversation list
-                    if (conversationListFragment != null) {
-                        conversationListFragment.refresh();
+                    if (dingFragment != null) {
+                        dingFragment.refresh();
                     }
-                } else if (currentTabIndex == 1) {
-                    if(contactListFragment != null) {
-                        contactListFragment.refresh();
+                } else if (currentTabIndex == TAB_INDEX_CONTACT) {
+                    if(bookFragment != null) {
+                        bookFragment.refresh();
                     }
-                }*/
+                }
                 String action = intent.getAction();
                 if(action.equals(Constants.ACTION_GROUP_CHANAGED)){
                     /*if (EaseCommonUtils.getTopActivity(MainActivity.this).equals(GroupsActivity.class.getName())) {
@@ -212,13 +212,17 @@ public class MainActivity extends EBaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            //exit();
-            moveTaskToBack(false);
+            LogUtils.e("system.exit()");
+            exit();
+            //moveTaskToBack(false);
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    @Override
+    public void back(View view) {
+        super.back(view);
+    }
     /**
      * 退出程序
      * */

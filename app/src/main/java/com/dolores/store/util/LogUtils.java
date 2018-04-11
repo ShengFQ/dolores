@@ -9,12 +9,12 @@ import android.util.Log;
 
 public class LogUtils {
     private final static String TAG ="shengfq";
-    private static boolean debug;
+    static boolean debug;
     public boolean isDebug(){
         return this.debug;
     }
-    public void setDebug(boolean debug){
-        this.debug=debug;
+    public static void setDebug(boolean debugs){
+        debug=debugs;
     }
 
     public static void d(String msg){

@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.dolores.store.DoloHelper;
 import com.dolores.store.DoloresApplication;
 import com.dolores.store.R;
 import com.dolores.store.ui.base.BaseActivity;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
+import com.dolores.store.util.ToastUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
@@ -122,7 +124,10 @@ public class LoginActivity extends BaseActivity {
                 if (!updatenick) {
                     LogUtils.e("update current user nick fail");
                 }
-
+                //确保loginactivity没有被销毁
+                if (!LoginActivity.this.isFinishing() && pd.isShowing()) {
+                    pd.dismiss();
+                }
                 Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -130,7 +135,10 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onError(int code, String error) {
-                LogUtils.e(new StringBuffer("登录出错").append("code ").append(code).append("error ").append(error).toString());
+                if (!LoginActivity.this.isFinishing() && pd.isShowing()) {
+                    pd.dismiss();
+                }
+                ToastUtils.showToast(LoginActivity.this,new StringBuffer("登录出错").append(error).toString());
             }
 
             @Override

@@ -12,11 +12,11 @@
     <string name="action_complete">完成</string>
 
     <!-- h -->
-    <string name="hint_mobile">请输入手机号</string>
+    <string name="hint_mobile">请输入用户名</string>
     <string name="hint_password">请输入密码</string>
 
     <!-- l -->
-    <string name="label_mobile">手机号</string>
+    <string name="label_mobile">用户名</string>
     <string name="label_password">密码</string>
     <string name="label_mobile_or_not">没有账号？</string>
     <string name="label_ding">消息</string>

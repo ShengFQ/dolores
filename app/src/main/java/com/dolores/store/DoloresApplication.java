@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.dolores.store.http.HttpClient;
+import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.OSUtils;
 import com.dolores.store.util.SharePref;
 import com.dolores.store.util.SharePrefConstant;
@@ -20,6 +21,7 @@ public class DoloresApplication extends Application {
     public void onCreate() {
         super.onCreate();
         this.mApplicationContext=this;
+        LogUtils.setDebug(true);
             mSharePref = SharePref.getInstance(SharePrefConstant.PREF_NAME, this);
             Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(this));
             //tencent bugly crash report framework init

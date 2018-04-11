@@ -36,8 +36,8 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="@string/hint_mobile"
-                android:inputType="number"
-                android:maxLength="11"
+                android:inputType="text"
+                android:maxLength="15"
                 android:textColor="@color/color_black2"
                 android:textColorHint="@color/color_black5"
                 android:textSize="@dimen/normal"/>

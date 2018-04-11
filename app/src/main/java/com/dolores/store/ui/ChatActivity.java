@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.dolores.store.R;
+import com.dolores.store.runtimepermissions.PermissionsManager;
 import com.dolores.store.ui.base.EBaseActivity;
 import com.dolores.store.ui.main.MainActivity;
 import com.hyphenate.easeui.ui.EaseChatFragment;
@@ -65,6 +66,6 @@ public class ChatActivity extends EBaseActivity {
 
     @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                                      @NonNull int[] grantResults) {
-      //TODO  PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 }

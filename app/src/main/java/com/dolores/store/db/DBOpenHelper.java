@@ -20,7 +20,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
             .append(UserDao.USERS_TABLE_NAME).append(" (")
             .append(UserDao.COLUMN_NAME_NICK).append(" TEXT, ")
             .append(UserDao.COLUMN_NAME_AVATAR).append(" TEXT, ")
-            .append(UserDao.COLUMN_NAME_ID).append(" TEXT PRIMARY KEY ").toString();
+            .append(UserDao.COLUMN_NAME_ID).append(" TEXT PRIMARY KEY );").toString();
 
     private static final String INIVTE_MESSAGE_TABLE_CREATE=new StringBuffer().append("CREATE TABLE ")
             .append(InviteMessgeDao.TABLE_NAME).append(" (")
@@ -33,18 +33,18 @@ public class DbOpenHelper extends SQLiteOpenHelper {
             .append(InviteMessgeDao.COLUMN_NAME_ISINVITEFROMME).append(" INTEGER, ")
             .append(InviteMessgeDao.COLUMN_NAME_UNREAD_MSG_COUNT).append(" INTEGER, ")
             .append(InviteMessgeDao.COLUMN_NAME_TIME).append(" TEXT, ")
-            .append(InviteMessgeDao.COLUMN_NAME_GROUPINVITER).append(" TEXT ").toString();
+            .append(InviteMessgeDao.COLUMN_NAME_GROUPINVITER).append(" TEXT );").toString();
 
     private static final String ROBOT_TABLE_CREATE=new StringBuffer().append("CREATE TABLE ")
             .append(UserDao.ROBOT_TABLE_NAME).append(" (")
             .append(UserDao.ROBOT_COLUMN_NAME_ID).append(" TEXT PRIMARY KEY, ")
             .append(UserDao.ROBOT_COLUMN_NAME_NICK).append(" TEXT, ")
-            .append(UserDao.ROBOT_COLUMN_NAME_AVATAR).append(" TEXT, ").toString();
+            .append(UserDao.ROBOT_COLUMN_NAME_AVATAR).append(" TEXT );").toString();
 
     private static final String CREATE_PREF_TABLE=new StringBuffer().append("CREATE TABLE ")
             .append(UserDao.PREF_TABLE_NAME).append(" (")
             .append(UserDao.COLUMN_NAME_DISABLED_GROUPS).append(" TEXT, ")
-            .append(UserDao.COLUMN_NAME_DISABLED_IDS).append(" TEXT ").toString();
+            .append(UserDao.COLUMN_NAME_DISABLED_IDS).append(" TEXT );").toString();
 
     private DbOpenHelper(Context context) {
         super(context, getUserDatabaseName(), null, DATABASE_VERSION);
