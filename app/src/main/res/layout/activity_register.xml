@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher_round_fotor" />
     </RelativeLayout>
 
     <LinearLayout
@@ -47,10 +47,11 @@
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/iv_username"
-                android:background="@null"
                 android:hint="@string/user_name"
+                android:textColorHint="@color/color_black"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
+                android:textColor="@color/color_black"
                 android:textSize="18sp" />
         </RelativeLayout>
 
@@ -82,6 +83,8 @@
                 android:inputType="textPassword"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
+                android:textColorHint="@color/color_black"
+                android:textColor="@color/color_black"
                 android:textSize="18sp" />
         </RelativeLayout>
 
@@ -113,6 +116,8 @@
                 android:inputType="textPassword"
                 android:paddingLeft="10dip"
                 android:singleLine="true"
+                android:textColorHint="@color/color_black"
+                android:textColor="@color/color_black"
                 android:textSize="18sp" />
         </RelativeLayout>
 

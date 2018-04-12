@@ -79,4 +79,23 @@ public class UserProfileManager {
         currentUser = null;
         PreferenceManager.getInstance().removeCurrentUserInfo();
     }
+
+
+    public void removeSyncContactInfoListener(DoloHelper.DataSyncListener listener) {
+        if (listener == null) {
+            return;
+        }
+        if (syncContactInfosListeners.contains(listener)) {
+            syncContactInfosListeners.remove(listener);
+        }
+    }
+
+    public void addSyncContactInfoListener(DoloHelper.DataSyncListener listener) {
+        if (listener == null) {
+            return;
+        }
+        if (!syncContactInfosListeners.contains(listener)) {
+            syncContactInfosListeners.add(listener);
+        }
+    }
 }

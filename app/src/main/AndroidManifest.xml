@@ -99,6 +99,15 @@
         </activity>
 
         <!-- 添加好友 -->
+        <activity
+            android:name=".ui.AddContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity
+            android:name=".ui.NewFriendsMsgActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible"/>
+
         <!-- 群组详情 -->
         <!-- 群组列表 -->
         <!-- 聊天室详情 -->
@@ -112,6 +121,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide" />
         <!-- 新的朋友邀请消息页面 -->
+
         <!-- 转发消息用户列表页面 -->
         <!-- 自定义的contextmenu -->
         <!-- 显示下载大图页面 -->

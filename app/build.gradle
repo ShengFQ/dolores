@@ -63,5 +63,6 @@ dependencies {
     compile 'com.tencent.bugly:crashreport:latest.release'
     compile 'com.tencent.bugly:nativecrashreport:latest.release'
     compile 'com.android.support:support-v4:24.2.1'
+    compile "me.leolin:ShortcutBadger:1.1.21@aar"
     testCompile 'junit:junit:4.12'
 }

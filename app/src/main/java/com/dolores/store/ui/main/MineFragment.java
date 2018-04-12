@@ -19,10 +19,12 @@ import com.hyphenate.chat.EMClient;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Setting Fragment
  * */
-public class MineFragment extends Fragment implements View.OnClickListener{
+public class MineFragment extends Fragment{
     @Bind(R.id.btn_logout)
      Button logoutBtn;
     @Override
@@ -48,7 +50,7 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-    @Override
+    @OnClick({R.id.btn_logout})
     public void onClick(View v) {
         switch (v.getId()){
             case  R.id.btn_logout:

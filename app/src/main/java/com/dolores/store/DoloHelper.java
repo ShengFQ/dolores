@@ -19,6 +19,7 @@ import com.dolores.store.domain.RobotUser;
 import com.dolores.store.receiver.CallReceiver;
 import com.dolores.store.ui.ChatActivity;
 import com.dolores.store.ui.main.MainActivity;
+import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.PreferenceManager;
 import com.dolores.store.util.UserProfileManager;
 import com.hyphenate.EMCallBack;
@@ -59,6 +60,8 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 /**
  * Created by sheng on 18/4/9.
@@ -359,6 +362,8 @@ public class DoloHelper {
             public String getLatestText(EMMessage message, int fromUsersNum, int messageNum) {
                 // here you can customize the text.
                 // return fromUsersNum + "contacts send " + messageNum + "messages to you";
+                int unread=EMClient.getInstance().chatManager().getUnreadMsgsCount();
+                boolean success = ShortcutBadger.applyCount(appContext, unread);
                 return null;
             }
 
@@ -1631,5 +1636,13 @@ public class DoloHelper {
      * */
     public void popActivity(Activity activity) {
         easeUI.popActivity(activity);
+    }
+
+
+    public boolean isContactsSyncedWithServer() {
+        return isContactsSyncedWithServer;
+    }
+    public boolean isSyncingContactsWithServer() {
+        return isSyncingContactsWithServer;
     }
 }

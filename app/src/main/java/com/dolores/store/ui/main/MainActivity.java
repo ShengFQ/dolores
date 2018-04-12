@@ -39,6 +39,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class MainActivity extends EBaseActivity {
     @Bind(R.id.unread_msg_number)
@@ -211,10 +212,9 @@ public class MainActivity extends EBaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
             LogUtils.e("system.exit()");
-            exit();
-            //moveTaskToBack(false);
+            moveTaskToBack(false);
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -259,8 +259,11 @@ public class MainActivity extends EBaseActivity {
         if (count > 0) {
             unreadLabel.setText(String.valueOf(count));
             unreadLabel.setVisibility(View.VISIBLE);
+            boolean success = ShortcutBadger.applyCount(MainActivity.this, count);
         } else {
             unreadLabel.setVisibility(View.INVISIBLE);
+            boolean success = ShortcutBadger.removeCount(MainActivity.this);
+
         }
     }
     /**
