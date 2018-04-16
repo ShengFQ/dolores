@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+    <!-- a -->
+    <string name="action_cancel">cancel</string>
+    <string name="action_ok">ok</string>
+    <string name="action_login">login</string>
+    <string name="action_register">register</string>
+    <string name="action_start">start</string>
+    <string name="action_save">save</string>
+    <string name="action_delete">delete</string>
+    <string name="action_edit">edit</string>
+    <string name="action_complete">complete</string>
+
+    <!-- h -->
+    <string name="hint_mobile">user name</string>
+    <string name="hint_password">password</string>
+
+    <!-- l -->
+    <string name="label_mobile">User Name</string>
+    <string name="label_password">PassWord</string>
+    <string name="label_mobile_or_not">No account？</string>
+    <string name="label_ding">Conversation</string>
+    <string name="label_book">Contact</string>
+    <string name="label_mine">Mine</string>
+
+    <!-- m -->
+    <string name="msg_quit">are you exit?</string>
+    <!--easeUI-->
     <string name="app_name">Hyphenate Demo</string>
     <string name="app_slogon">IM as a service</string>
     <string name="text_ack_msg">Read</string>

@@ -18,7 +18,8 @@ import java.net.URLEncoder;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 /**
- * shengfq 27/3/2018
+ *
+ * @author shengfq 27/3/2018
  * volley lib
  * */
 public class HttpClient {

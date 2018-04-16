@@ -91,7 +91,6 @@ public class MineFragment extends Fragment{
 
                     @Override
                     public void run() {
-                        // TODO Auto-generated method stub
                         pd.dismiss();
                         Toast.makeText(getActivity(), "unbind devicetokens failed", Toast.LENGTH_SHORT).show();
                     }
