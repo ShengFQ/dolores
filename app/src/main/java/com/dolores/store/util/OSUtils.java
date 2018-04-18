@@ -19,7 +19,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
 /**
  * shengfq 3/27/2018
  * APP shell壳常量
@@ -73,13 +76,30 @@ public class OSUtils {
     /**
      * 初始化crash report package
      * */
-    public static void initCrashReport(Context context){
+    public static void initCrashReport(final Context context){
         //当前包名是否等于当前进程名
         String packageName=context.getPackageName();
         //获取当前进程名
         String processName=getProcessName(android.os.Process.myPid());
         CrashReport.UserStrategy strategy=new CrashReport.UserStrategy(context);
         strategy.setUploadProcess(processName==null || processName.equals(packageName));
+        //TBS x5 crash report
+        strategy.setCrashHandleCallback(new CrashReport.CrashHandleCallback() {
+            public Map<String, String> onCrashHandleStart(int crashType, String errorType, String errorMessage, String errorStack) {
+                LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+                String x5CrashInfo = com.tencent.smtt.sdk.WebView.getCrashExtraMessage(context);
+                map.put("x5crashInfo", x5CrashInfo);
+                return map;
+            }
+            @Override
+            public byte[] onCrashHandleStart2GetExtraDatas(int crashType, String errorType, String errorMessage, String errorStack) {
+                try {
+                    return "Extra data.".getBytes("UTF-8");
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        });
         CrashReport.initCrashReport(context, Constants.APPID_BUGLY,true,strategy);
 
     }

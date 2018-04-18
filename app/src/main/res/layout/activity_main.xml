@@ -116,7 +116,7 @@
                 android:layout_centerHorizontal="true"
                 android:includeFontPadding="false"
                 android:paddingBottom="3dp"
-                android:text="@string/label_mine"
+                android:text="@string/label_work"
                 android:textColor="@color/main_menu_text_color"
                 android:textSize="@dimen/small"/>
 

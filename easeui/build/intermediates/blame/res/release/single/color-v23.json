@@ -1,31 +1,7 @@
 [
     {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_default.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
         "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
         "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
         "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
@@ -40,24 +16,12 @@
         "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
         "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
         "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
         "source": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/sheng/workspace/github/easemob/easeui/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/Users/sheng/workspace/github/OA/DoloresTeam/dolores-android/easeui/build/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",

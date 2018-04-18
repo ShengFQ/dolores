@@ -2,7 +2,6 @@ package com.dolores.store.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -29,7 +28,7 @@ import butterknife.ButterKnife;
 /**
  *
  * Conversation Fragment by shengfq
- * h会话fragment
+ * 会话列表页签
  * */
 public class DingFragment extends EaseConversationListFragment {
 

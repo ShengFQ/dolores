@@ -22,7 +22,7 @@
     <string name="label_ding">Conversation</string>
     <string name="label_book">Contact</string>
     <string name="label_mine">Mine</string>
-
+    <string name="label_work">Work</string>
     <!-- m -->
     <string name="msg_quit">are you exit?</string>
     <!--easeUI-->

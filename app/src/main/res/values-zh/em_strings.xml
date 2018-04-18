@@ -22,7 +22,7 @@
     <string name="label_ding">消息</string>
     <string name="label_book">联系人</string>
     <string name="label_mine">我的</string>
-
+    <string name="label_work">工作</string>
     <!-- m -->
     <string name="msg_quit">再按一次退出朵拉</string>
 

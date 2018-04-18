@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_workbench"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.dolores.store.ui.NewsWebviewActivity">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@color/top_bar_normal_bg"
+        android:gravity="center_vertical" >
+
+        <include layout="@layout/ease_commom_back_btn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/Application_and_notify"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/layout_xtshell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f2f2f2"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <com.tencent.smtt.sdk.WebView
+                android:id="@+id/app_detaill_wv"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" />
+            <RelativeLayout
+                android:id="@+id/bottom_operation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/bottom_back_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:background="@mipmap/common_btn_back_disable" />
+
+                <ImageView
+                    android:id="@+id/bottom_ahead_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dip"
+                    android:layout_toRightOf="@id/bottom_back_imageview"
+                    android:background="@mipmap/common_btn_ahead_disable"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/bottom_refresh_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/selector_common_btn_refresh" />
+            </RelativeLayout>
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/webview_progressbar"
+            android:layout_gravity="top"
+            android:layout_height="2dip"
+            android:layout_width="match_parent"
+            android:indeterminateOnly = "false"/>
+
+    </FrameLayout>
+</RelativeLayout>

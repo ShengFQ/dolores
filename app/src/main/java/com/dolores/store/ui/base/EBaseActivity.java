@@ -7,6 +7,7 @@ import com.hyphenate.easeui.ui.EaseBaseActivity;
 
 /**
  * Created by sheng on 18/4/9.
+ * 环信UI基类
  */
 @SuppressLint("Registered")
 public class EBaseActivity extends EaseBaseActivity {
