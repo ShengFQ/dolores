@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="webview_copy_link">拷贝链接</string>
+    <string name="webview_save_image">保存到手机</string>
+    <string name="webview_copy_image_url">拷贝图片链接</string>
+    <string name="toast_copy_text_success">已经复制到剪切板</string>
     <!-- a -->
     <string name="action_cancel">取消</string>
     <string name="action_ok">确定</string>

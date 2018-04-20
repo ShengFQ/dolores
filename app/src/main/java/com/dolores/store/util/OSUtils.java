@@ -61,14 +61,23 @@ public class OSUtils {
      *
      * */
     public static File getExternalCacheDir(final Context context){
+       return getExternalCacheDir(context,null);
+    }
+    /**
+     * get the external app path directory
+     *
+     * */
+    public static File getExternalCacheDir(final Context context,String path){
+        String defaultCache="cache/";
         //api8以上有默认扩展缓存,其他的在package/cache目录
         if (hasExternalCacheDir())
             return context.getExternalCacheDir();
-
-        final String cacheDir="Android/data"+context.getPackageName()+"/cache/";
-        return new File(Environment.getExternalStorageDirectory().getPath()+cacheDir);
+            if(path==null){
+                path=defaultCache;
+            }
+        String cacheDir="Android/data"+context.getPackageName()+path;
+        return new File(Environment.getExternalStorageDirectory().getPath()+File.separator+cacheDir);
     }
-
     public static boolean hasExternalCacheDir(){
         return Build.VERSION.SDK_INT>=Build.VERSION_CODES.FROYO;
     }

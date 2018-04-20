@@ -3,7 +3,6 @@ package com.dolores.store.ui.base;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-
 import com.dolores.store.util.LogUtils;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
@@ -22,6 +21,7 @@ public class BaseSwipeBackActivity extends SwipeBackActivity {
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
         LogUtils.d(TAG,"onCreate");
     }
+
 
     @Override
     public SwipeBackLayout getSwipeBackLayout() {

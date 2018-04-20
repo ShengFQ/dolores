@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.dolores.store.DoloHelper;
 import com.dolores.store.R;
+import com.dolores.store.lightapp.runtime.WebviewJump;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 
@@ -27,6 +28,9 @@ import butterknife.OnClick;
 public class MineFragment extends Fragment{
     @Bind(R.id.btn_logout)
      Button logoutBtn;
+
+    @Bind(R.id.broken)
+    Button broken;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,15 +54,20 @@ public class MineFragment extends Fragment{
         }
     }
 
-    @OnClick({R.id.btn_logout})
+    @OnClick({R.id.btn_logout,R.id.broken})
     public void onClick(View v) {
         switch (v.getId()){
             case  R.id.btn_logout:
                 logout();
                 break;
+            case R.id.broken:
+                gotobaidu();
+                break;
         }
     }
-
+    void gotobaidu(){
+        WebviewJump.gotoNewsWebviewActivity(getActivity(),"https://www.jd.com","haha",null);
+    }
     void logout() {
         final ProgressDialog pd = new ProgressDialog(getActivity());
         String st = getResources().getString(R.string.Are_logged_out);

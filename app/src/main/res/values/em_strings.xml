@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="webview_copy_link">copy</string>
+    <string name="webview_save_image">save in phone</string>
+    <string name="webview_copy_image_url">copy the link</string>
+    <string name="toast_copy_text_success">copy to clipboard</string>
+
     <!-- a -->
     <string name="action_cancel">cancel</string>
     <string name="action_ok">ok</string>
