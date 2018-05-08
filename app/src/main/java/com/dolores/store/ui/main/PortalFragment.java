@@ -31,7 +31,8 @@ import butterknife.ButterKnife;
 
 /**
  * @author shengfq.
- * portal of APP
+ * portal of APP 注意该页面加载的UI资源比较多，能使用缓存最好。
+ * 具体可以使用view单例。
  */
 public class PortalFragment extends Fragment {
     private final String TAG="PortalFragment";

@@ -12,18 +12,24 @@ import java.util.Map;
  */
 
 public abstract class NdRequest {
+    Map<String,String> mHeader=new HashMap<String,String>();
+    Map<String,String> mBody=new HashMap<String,String>();
+
     protected int mMethod= METHOD_POST;
     public static final int METHOD_POST=Request.Method.POST;
     public static final int METHOD_GET=Request.Method.GET;
+    //http method
     public abstract int getMethod();
-
+    //complete url
     public abstract String getUrl();
-    public Map<String,String> getHeaderParams() {
-        return null;
-    }
-
+    //header param
+    public  Map<String,String> getHeaderParams(){
+        mHeader.put("Content-Type","application/json");
+        return mHeader;
+    } ;
+    //body param
     public Map<String,String> getPostParams(){
-        return null;
+        return mBody;
     }
 
 }

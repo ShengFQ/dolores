@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.dolores.store.DoloHelper;
 import com.dolores.store.DoloresApplication;
 import com.dolores.store.R;
+import com.dolores.store.http.LoginRequest;
+import com.dolores.store.http.NetworkTask;
 import com.dolores.store.ui.base.BaseActivity;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
@@ -67,6 +69,7 @@ public class LoginActivity extends BaseActivity {
     private void postRegister(){
         startActivityForResult(new Intent(this, RegisterActivity.class), 0);
     }
+
     private void postLogin() {
         /*StringRequest request = new StringRequest(Constants.LOGIN_URL, Request.Method.POST, map, new Response.Listener<String>() {
             @Override
@@ -114,6 +117,12 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onSuccess() {
                 LogUtils.i(new StringBuffer("登录成功").toString());
+
+                //服务器验证 TODO
+                LoginRequest loginRequest=new LoginRequest();
+                loginRequest.loginId=etMobile.getText().toString().trim();
+                loginRequest.passwd=etPassword.getText().toString().trim();
+
 
                 // ** manually load all local groups and conversation
                 EMClient.getInstance().groupManager().loadAllGroups();

@@ -52,6 +52,6 @@ public class Constants extends EaseConstant {
         public static final int MODIFY = 1;
     }
 
-    public static String LOGIN_URL = "loginModule";
+
     public static String PROFILE_URL = "api/v1/profile";
 }
