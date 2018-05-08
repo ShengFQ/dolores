@@ -15,6 +15,10 @@
     <string name="action_edit">编辑</string>
     <string name="action_complete">完成</string>
 
+    <!--b-->
+    <string name="banner_title_main">我的圈圈</string>
+    <string name="banner_title_cate">我的类目</string>
+    <string name="banner_title_game">我的游戏</string>
     <!-- h -->
     <string name="hint_mobile">请输入用户名</string>
     <string name="hint_password">请输入密码</string>
@@ -26,7 +30,7 @@
     <string name="label_ding">消息</string>
     <string name="label_book">联系人</string>
     <string name="label_mine">我的</string>
-    <string name="label_work">工作</string>
+    <string name="label_portal">门户</string>
     <!-- m -->
     <string name="msg_quit">再按一次退出朵拉</string>
 

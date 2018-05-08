@@ -40,19 +40,26 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.leolin.shortcutbadger.ShortcutBadger;
-
+/**
+ * @author shengfq
+ * @since 1/3/2018
+ *
+ * */
 public class MainActivity extends EBaseActivity {
     @Bind(R.id.unread_msg_number)
     TextView unreadLabel;
     // textview for unread event message
     @Bind(R.id.unread_address_number)
      TextView unreadAddressLable;
+    @Bind(R.id.portal_layout)
+    RelativeLayout portalLayout;
     @Bind(R.id.ding_layout)
     RelativeLayout dingLayout;
     @Bind(R.id.book_layout)
     RelativeLayout bookLayout;
     @Bind(R.id.mine_layout)
     RelativeLayout mineLayout;
+    private PortalFragment portalFragment;
     private DingFragment dingFragment;
     private BookFragment bookFragment;
     private MineFragment mineFragment;
@@ -66,9 +73,11 @@ public class MainActivity extends EBaseActivity {
     private InviteMessgeDao inviteMessgeDao;
 
     private int currentTabIndex=0;//当前的TAB视图
+    private final int TAB_INDEX_PORTAL=-1;
     private final int TAB_INDEX_CONVERSATION=0;
     private final int TAB_INDEX_CONTACT=1;
     private final int TAB_INDEX_SETTING=2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +89,7 @@ public class MainActivity extends EBaseActivity {
         requestPermissions();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        switchFragment(0);
+        switchFragment(TAB_INDEX_PORTAL);
         inviteMessgeDao = new InviteMessgeDao(this);
         //由于后台或其他UI传递过来的异常处理
         showExceptionDialogFromIntent(getIntent());
@@ -172,8 +181,24 @@ public class MainActivity extends EBaseActivity {
         if (mineFragment != null) {
             ft.hide(mineFragment);
         }
+        if(portalFragment!=null){
+            ft.hide(portalFragment);
+        }
         switch (which) {
+            case TAB_INDEX_PORTAL://门户
+                portalLayout.setSelected(true);
+                dingLayout.setSelected(false);
+                bookLayout.setSelected(false);
+                mineLayout.setSelected(false);
+                if (portalFragment == null) {
+                    portalFragment = new PortalFragment();
+                    ft.add(R.id.fragment_container, portalFragment);
+                } else {
+                    ft.show(portalFragment);
+                }
+                break;
             case TAB_INDEX_CONVERSATION://消息
+                portalLayout.setSelected(false);
                 dingLayout.setSelected(true);
                 bookLayout.setSelected(false);
                 mineLayout.setSelected(false);
@@ -185,6 +210,7 @@ public class MainActivity extends EBaseActivity {
                 }
                 break;
             case TAB_INDEX_CONTACT://联系人
+                portalLayout.setSelected(false);
                 dingLayout.setSelected(false);
                 bookLayout.setSelected(true);
                 mineLayout.setSelected(false);
@@ -196,6 +222,7 @@ public class MainActivity extends EBaseActivity {
                 }
                 break;
             case TAB_INDEX_SETTING://我的
+                portalLayout.setSelected(false);
                 dingLayout.setSelected(false);
                 bookLayout.setSelected(false);
                 mineLayout.setSelected(true);
@@ -212,9 +239,9 @@ public class MainActivity extends EBaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            LogUtils.e("system.exit()");
-            moveTaskToBack(false);
+        LogUtils.d("onkeydown:"+event.getRepeatCount());
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 1) {
+            exit();
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -236,9 +263,12 @@ public class MainActivity extends EBaseActivity {
         }
     }
 
-    @OnClick({R.id.ding_layout, R.id.book_layout, R.id.mine_layout})
+    @OnClick({R.id.portal_layout,R.id.ding_layout, R.id.book_layout, R.id.mine_layout})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.portal_layout:
+                switchFragment(TAB_INDEX_PORTAL);
+                break;
             case R.id.ding_layout:
                 switchFragment(TAB_INDEX_CONVERSATION);
                 break;

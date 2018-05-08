@@ -21,7 +21,7 @@ public class DoloresApplication extends Application {
     public void onCreate() {
         super.onCreate();
         this.mApplicationContext=this;
-        LogUtils.setDebug(true);
+        LogUtils.setDebug(BuildConfig.DEBUG);
             mSharePref = SharePref.getInstance(SharePrefConstant.PREF_NAME, this);
             Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(this));
             //tencent bugly crash report framework init

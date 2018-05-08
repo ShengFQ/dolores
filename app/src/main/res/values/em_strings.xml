@@ -5,6 +5,8 @@
     <string name="webview_copy_image_url">copy the link</string>
     <string name="toast_copy_text_success">copy to clipboard</string>
 
+
+
     <!-- a -->
     <string name="action_cancel">cancel</string>
     <string name="action_ok">ok</string>
@@ -16,6 +18,10 @@
     <string name="action_edit">edit</string>
     <string name="action_complete">complete</string>
 
+    <!--b -->
+    <string name="banner_title_main">main zone</string>
+    <string name="banner_title_cate">cate zone</string>
+    <string name="banner_title_game">game zone</string>
     <!-- h -->
     <string name="hint_mobile">user name</string>
     <string name="hint_password">password</string>
@@ -27,11 +33,11 @@
     <string name="label_ding">Conversation</string>
     <string name="label_book">Contact</string>
     <string name="label_mine">Mine</string>
-    <string name="label_work">Work</string>
+    <string name="label_portal">portal</string>
     <!-- m -->
     <string name="msg_quit">are you exit?</string>
     <!--easeUI-->
-    <string name="app_name">Hyphenate Demo</string>
+    <string name="app_name">dolores</string>
     <string name="app_slogon">IM as a service</string>
     <string name="text_ack_msg">Read</string>
     <string name="text_delivered_msg">Delivered</string>

@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
 
+import com.dolores.store.BuildConfig;
 import com.dolores.store.Constants;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
@@ -109,7 +110,7 @@ public class OSUtils {
                 }
             }
         });
-        CrashReport.initCrashReport(context, Constants.APPID_BUGLY,true,strategy);
+        CrashReport.initCrashReport(context, Constants.APPID_BUGLY, BuildConfig.DEBUG,strategy);
 
     }
 

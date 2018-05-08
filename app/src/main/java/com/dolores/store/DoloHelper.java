@@ -137,7 +137,7 @@ public class DoloHelper {
         options.setRequireAck(true);
         options.setMipushConfig(Constants.APPID_MIPUSH, Constants.APPKEY_MIPUSH);
         if (EaseUI.getInstance().init(context, options)) {
-            EMClient.getInstance().setDebugMode(true);//debug module
+            EMClient.getInstance().setDebugMode(false);//debug module
             easeUI = EaseUI.getInstance();
             //to set user's profile and avatar
             setEaseUIProviders();

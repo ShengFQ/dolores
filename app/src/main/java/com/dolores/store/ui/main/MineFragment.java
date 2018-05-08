@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
+ * @author shengfq
  * Setting Fragment
  * */
 public class MineFragment extends Fragment{

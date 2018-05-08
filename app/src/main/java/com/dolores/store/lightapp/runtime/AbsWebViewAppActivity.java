@@ -15,10 +15,16 @@ package com.dolores.store.lightapp.runtime;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,6 +38,7 @@ import com.dolores.store.R;
 import com.dolores.store.lightapp.runtime.interfaces.IWebView;
 import com.dolores.store.lightapp.runtime.tencentX5.X5WebView;
 import com.dolores.store.ui.base.BaseSwipeBackActivity;
+import com.dolores.store.util.StringUtils;
 import com.dolores.store.util.ToastUtils;
 import com.tencent.smtt.sdk.ValueCallback;
 
@@ -53,6 +60,7 @@ public abstract class AbsWebViewAppActivity extends BaseSwipeBackActivity {
     private ImageView backButton, forwardButton, refreshButton;
     private ProgressBar loadingProgressBar;
     private RelativeLayout bottom_operation_layout;//底部操作栏
+    private LinearLayout layout_webview;
     public int INPUT_FILE_REQUEST_CODE=0;
     public ValueCallback<Uri[]> mFilePathCallback;
     public String mCameraPhotoPath;
@@ -63,6 +71,7 @@ public abstract class AbsWebViewAppActivity extends BaseSwipeBackActivity {
         //避免输入法界面弹出后遮挡输入光标的问题
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         webview=new X5WebView(this);
+        layout_webview = (LinearLayout) findViewById(getRootViewId());
         webview.onCreate(getWebViewId(),this);
         bottom_operation_layout = (RelativeLayout) findViewById(getBottomOperationLayoutId());
         backButton = (ImageView) findViewById(getBottomBackImageId());
@@ -224,6 +233,7 @@ public abstract class AbsWebViewAppActivity extends BaseSwipeBackActivity {
         }
         return result;
     }
+    public abstract int getRootViewId();
 
     public abstract String getStartUrl();
     //抽象方法子类实现获取webview布局

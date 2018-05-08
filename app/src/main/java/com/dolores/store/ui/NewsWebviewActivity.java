@@ -25,10 +25,8 @@ import com.dolores.store.lightapp.runtime.WebviewJump;
 import com.dolores.store.util.FileUtils;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.MemoryUtils;
-import com.dolores.store.util.StringUtils;
 import com.dolores.store.util.ToastUtils;
 import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMTextMessageBody;
 import com.tencent.smtt.sdk.WebView;
 
 import java.io.File;
@@ -37,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *webview容器
  * */
 public class NewsWebviewActivity extends AbsWebViewAppActivity {
     private final String TAG=NewsWebviewActivity.class.getSimpleName();
@@ -93,6 +91,10 @@ public class NewsWebviewActivity extends AbsWebViewAppActivity {
 
     }
 
+    @Override
+    public int getRootViewId() {
+        return R.id.layout_rootview;
+    }
 
 
     private void onWebViewLongClick(int type,String extra){
