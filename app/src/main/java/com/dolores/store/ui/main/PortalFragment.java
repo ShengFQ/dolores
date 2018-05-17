@@ -5,19 +5,32 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.dolores.store.BuildConfig;
 import com.dolores.store.R;
 import com.dolores.store.adapter.PagerGridAdapter;
 import com.dolores.store.lightapp.runtime.WebviewJump;
+import com.dolores.store.lightapp.runtime.interfaces.IWebView;
+import com.dolores.store.lightapp.runtime.tencentX5.X5WebView;
+import com.dolores.store.lightapp.runtime.tencentX5.X5WebViewC;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.widget.GlideImageLoader;
 import com.gcssloop.widget.PagerConfig;
 import com.gcssloop.widget.PagerGridLayoutManager;
 import com.gcssloop.widget.PagerGridSnapHelper;
+import com.hyphenate.chat.EMMessage;
+import com.tencent.smtt.sdk.WebView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -36,127 +49,64 @@ import butterknife.ButterKnife;
  */
 public class PortalFragment extends Fragment {
     private final String TAG="PortalFragment";
-    List banner_images=new ArrayList();
-    List<String> banner_titles=new ArrayList<String>();
-    @Bind(R.id.banner_news)
-    Banner banner_news;
-
-    @Bind(R.id.recycler_view_pager)
-    RecyclerView recyclerView_functional;
-
-    @Bind(R.id.swipe_layout_refresh)
-    SwipeRefreshLayout swipe_layout_refresh;
-
-    PagerGridAdapter pagerGridAdapter;
+    private static final String mHomeUrl = "http://www.vanke.com";
+    private X5WebViewC mX5WebView;
+    View mView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root=inflater.inflate(R.layout.fragment_portal, container, false);
-        ButterKnife.bind(this,root);
-        return root;
+        LogUtils.d("onCreateView");
+        if(mView==null) {
+             mView = inflater.inflate(R.layout.fragment_portal, container, false);
+            initHardwareAccelerate();
+            initView(mView);
+        }
+        return mView;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        init();
-        initView();
-       // initEvent();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtils.d("onCreate");
     }
-    private void init(){
-        banner_images.add(getResources().getDrawable(R.drawable.video_main));
-        banner_images.add(getResources().getDrawable(R.drawable.video_cate));
-        banner_images.add(getResources().getDrawable(R.drawable.video_game));
-        banner_titles.add(getResources().getString(R.string.banner_title_main));
-        banner_titles.add(getResources().getString(R.string.banner_title_cate));
-        banner_titles.add(getResources().getString(R.string.banner_title_game));
-    }
-    private void initView(){
-        //设置banner样式
-        banner_news.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
-        //设置图片加载器
-        banner_news.setImageLoader(new GlideImageLoader());
-        //设置图片集合
-        banner_news.setImages(banner_images);
-        //设置banner的动画效果
-        banner_news.setBannerAnimation(Transformer.DepthPage);
-        //设置标题集合
-        banner_news.setBannerTitles(banner_titles);
-        //设置自动轮播，默认为true
-        banner_news.isAutoPlay(true);
-        //设置轮播时间
-        banner_news.setDelayTime(1500);
-        //设置指示器位置（当banner模式中有指示器时）
-        banner_news.setIndicatorGravity(BannerConfig.CENTER);
-        //设置点击事件
-        banner_news.setOnBannerListener(bannerListener);
-        //banner设置方法全部调用完毕时最后调用
-        banner_news.start();
-        //////////////////////////////////////////
-        // 1.水平分页布局管理器
-        PagerGridLayoutManager layoutManager = new PagerGridLayoutManager(
-                2, 3, PagerGridLayoutManager.VERTICAL);
-        recyclerView_functional.setLayoutManager(layoutManager);
 
-// 2.设置滚动辅助工具
-        PagerGridSnapHelper pageSnapHelper = new PagerGridSnapHelper();
-        pageSnapHelper.attachToRecyclerView(recyclerView_functional);
-        layoutManager.setPageListener(pageListener);
-        layoutManager.setAllowContinuousScroll(true);//允许连续滚动
-        layoutManager.setOrientationType(PagerGridLayoutManager.HORIZONTAL);//设置滚动方向
-        PagerConfig.setShowLog(BuildConfig.DEBUG);
-        pagerGridAdapter=new PagerGridAdapter();
-        pagerGridAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver(){
-            @Override
-            public void onChanged() {
-                super.onChanged();
-                int count=pagerGridAdapter.getItemCount();
-                LogUtils.d(TAG,"item count:"+count);
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+    }
+
+    /**
+     * 启用硬件加速
+     */
+    private void initHardwareAccelerate() {
+        try {
+            if (Integer.parseInt(android.os.Build.VERSION.SDK) >= 11) {
+                getActivity().getWindow()
+                        .setFlags(
+                                android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+                                android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
             }
-        });
-        recyclerView_functional.setAdapter(pagerGridAdapter);
+        } catch (Exception e) {
+        }
     }
 
-    PagerGridLayoutManager.PageListener pageListener=new PagerGridLayoutManager.PageListener() {
-        @Override
-        public void onPageSizeChanged(int pageSize) {
-            LogUtils.d(TAG, "总页数 = " + pageSize);
-        }
-
-        @Override
-        public void onPageSelect(int pageIndex) {
-            LogUtils.d(TAG, "当前页 = " + pageIndex);
-        }
-    };
-    OnBannerListener bannerListener=new OnBannerListener() {
-        @Override
-        public void OnBannerClick(int position) {
-            //position 0
-            switch (position){
-                case 0:
-                    WebviewJump.gotoNewsWebviewActivity(getActivity(),"https://www.xiaomi.com","xiaomi",null);
-                    break;
-                case 1:
-                    WebviewJump.gotoNewsWebviewActivity(getActivity(),"https://www.jd.com","jd",null);
-                    break;
-                case 2:
-                    WebviewJump.gotoNewsWebviewActivity(getActivity(),"https://www.qq.com","qq",null);
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
-    @Override
-    public void onStart() {
-        super.onStart();
-        banner_news.startAutoPlay();
+    private void initView(View view) {
+        mX5WebView = (com.dolores.store.lightapp.runtime.tencentX5.X5WebViewC)view.findViewById(R.id.x5_webview);
+        mX5WebView.loadUrl(mHomeUrl);
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        banner_news.stopAutoPlay();
+    public void onResume() {
+        super.onResume();
+
+    }
+    @Override
+    public void onDestroy() {
+        //释放资源
+        if (mX5WebView != null)
+            mX5WebView.destroy();
+        super.onDestroy();
     }
 }

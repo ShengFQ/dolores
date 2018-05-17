@@ -6,15 +6,11 @@ package com.dolores.store.http;
 
 public abstract class NdResponse<T> {
     public T t;
-    public abstract void processData(T response);
+    public  abstract void processData(T response);
     public abstract void processError(Object error);
     public abstract Class getResponseDataClass();
     public T getT() {
         return t;
-    }
-
-    public void setT(T t) {
-        this.t = t;
     }
 
 }

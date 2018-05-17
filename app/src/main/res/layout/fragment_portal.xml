@@ -1,28 +1,16 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.dolores.store.ui.main.PortalFragment">
-    <!--scrollview zone-->
-<!--banner zone -->
-        <include
-            android:id="@+id/portal_header" layout="@layout/layout_portal_header"></include>
-<!--functional zone-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_below="@id/portal_header">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_pager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp" />
-        </RelativeLayout>
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_layout_refresh"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical">
+    <com.hyphenate.easeui.widget.EaseTitleBar
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        </android.support.v4.widget.SwipeRefreshLayout>
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        app:titleBarTitle="@string/fragment_portal"
+        />
+    <com.dolores.store.lightapp.runtime.tencentX5.X5WebViewC
+        android:id="@+id/x5_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

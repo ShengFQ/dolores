@@ -30,8 +30,6 @@ public class MineFragment extends Fragment{
     @Bind(R.id.btn_logout)
      Button logoutBtn;
 
-    @Bind(R.id.broken)
-    Button broken;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,19 +53,13 @@ public class MineFragment extends Fragment{
         }
     }
 
-    @OnClick({R.id.btn_logout,R.id.broken})
+    @OnClick({R.id.btn_logout})
     public void onClick(View v) {
         switch (v.getId()){
             case  R.id.btn_logout:
                 logout();
                 break;
-            case R.id.broken:
-                gotobaidu();
-                break;
         }
-    }
-    void gotobaidu(){
-        WebviewJump.gotoNewsWebviewActivity(getActivity(),"https://www.jd.com","haha",null);
     }
     void logout() {
         final ProgressDialog pd = new ProgressDialog(getActivity());

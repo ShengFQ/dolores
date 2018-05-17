@@ -4,6 +4,8 @@
     <string name="webview_save_image">保存到手机</string>
     <string name="webview_copy_image_url">拷贝图片链接</string>
     <string name="toast_copy_text_success">已经复制到剪切板</string>
+
+    <string name="fragment_portal">门户</string>
     <!-- a -->
     <string name="action_cancel">取消</string>
     <string name="action_ok">确定</string>
@@ -16,7 +18,7 @@
     <string name="action_complete">完成</string>
 
     <!--b-->
-    <string name="banner_title_main">我的圈圈</string>
+    <string name="banner_title_main">我的门户</string>
     <string name="banner_title_cate">我的类目</string>
     <string name="banner_title_game">我的游戏</string>
     <!-- h -->

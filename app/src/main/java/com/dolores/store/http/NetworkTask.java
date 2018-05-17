@@ -20,32 +20,25 @@ public class NetworkTask<T> {
     /**
      * 启动一个异步http请求栈
      * */
-    public AsyncTask<NdRequest, Integer, NdResponse> startHttpTask(final NdRequest ndRequest, final NdResponse ndResponse,
-                                                                   final AsynCallback<NdResponse> callback) {
+    public AsyncTask<NdRequest, Integer, NdResponse> startHttpTask(final NdRequest ndRequest, final NdResponse ndResponse) {
         final String url = ndRequest.getUrl();
         final int method = ndRequest.getMethod();
         final Map<String, String> header = ndRequest.getHeaderParams();
         final Map<String, String> postParams = ndRequest.getPostParams();
         return new AsyncTask<NdRequest, Integer, NdResponse>() {
             protected void onPreExecute() {
-                callback.onStart(ndResponse);
+
             }
 
             protected void onPostExecute(NdResponse result) {
-                try {
-                    callback.callback(result);
-                } finally {
-                    callback.onFinish(result);
-
-                }
             }
 
             @Override
             protected NdResponse doInBackground(NdRequest... params) {
-                GsonRequest<T> request = new GsonRequest<T>(method, url, ndResponse.getResponseDataClass(), header, postParams
-                        , new Response.Listener<T>() {
+                GsonRequest<ResultModel> request = new GsonRequest<ResultModel>(method, url, ndResponse.getResponseDataClass(), header, postParams
+                        , new Response.Listener<ResultModel>() {
                     @Override
-                    public void onResponse(final T response) {
+                    public void onResponse(final ResultModel response) {
                         ndResponse.processData(response);
                     }
                 }, new Response.ErrorListener() {

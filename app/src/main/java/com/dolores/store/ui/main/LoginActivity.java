@@ -14,7 +14,10 @@ import com.dolores.store.DoloHelper;
 import com.dolores.store.DoloresApplication;
 import com.dolores.store.R;
 import com.dolores.store.http.LoginRequest;
+import com.dolores.store.http.NdResponse;
 import com.dolores.store.http.NetworkTask;
+import com.dolores.store.http.ResultModel;
+import com.dolores.store.http.UserInfo;
 import com.dolores.store.ui.base.BaseActivity;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
@@ -118,10 +121,6 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess() {
                 LogUtils.i(new StringBuffer("登录成功").toString());
 
-                //服务器验证 TODO
-                LoginRequest loginRequest=new LoginRequest();
-                loginRequest.loginId=etMobile.getText().toString().trim();
-                loginRequest.passwd=etPassword.getText().toString().trim();
 
 
                 // ** manually load all local groups and conversation
@@ -157,4 +156,5 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
+
 }

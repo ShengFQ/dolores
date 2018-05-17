@@ -26,6 +26,7 @@ public class DoloresApplication extends Application {
             Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(this));
             //tencent bugly crash report framework init
             OSUtils.initCrashReport(mApplicationContext);
+            OSUtils.initX5WebView(mApplicationContext);
             DoloHelper.getInstance().init(mApplicationContext);
     }
     /**
