@@ -13,15 +13,19 @@ import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.exceptions.HyphenateException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * @author shengfq
+ *         注册页签
+ */
 public class RegisterActivity extends BaseActivity {
-    @Bind(R.id.username)
+    @BindView(R.id.username)
      EditText userNameEditText;
-    @Bind(R.id.password)
+    @BindView(R.id.password)
      EditText passwordEditText;
-    @Bind(R.id.confirm_password)
+    @BindView(R.id.confirm_password)
      EditText confirmPwdEditText;
 
     @Override

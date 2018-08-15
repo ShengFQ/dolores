@@ -23,12 +23,10 @@ import com.hyphenate.easeui.model.EaseDingMessageHelper;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.hyphenate.util.NetUtils;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 /**
  *
- * Conversation Fragment by shengfq
- * 会话列表页签
+ * @author shengfq
+ * 首页页签-消息
  * */
 public class DingFragment extends EaseConversationListFragment {
 

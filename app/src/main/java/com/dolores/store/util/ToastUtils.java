@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.dolores.store.widget.DefineToast;
 
+@Deprecated
 public class ToastUtils {
 
     private static DefineToast defineToast;

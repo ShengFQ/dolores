@@ -9,7 +9,7 @@ import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 /**
- * Created by sheng on 18/4/18.
+ * @author by sheng on 18/4/18.
  * 滑动返回activity,适用于activity栈顶展示
  */
 

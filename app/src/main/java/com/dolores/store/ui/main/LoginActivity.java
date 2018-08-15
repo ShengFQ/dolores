@@ -7,37 +7,31 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.dolores.store.DoloHelper;
 import com.dolores.store.DoloresApplication;
 import com.dolores.store.R;
-import com.dolores.store.http.LoginRequest;
-import com.dolores.store.http.NdResponse;
-import com.dolores.store.http.NetworkTask;
-import com.dolores.store.http.ResultModel;
-import com.dolores.store.http.UserInfo;
 import com.dolores.store.ui.base.BaseActivity;
 import com.dolores.store.util.LogUtils;
 import com.dolores.store.util.TitleUtils;
-import com.dolores.store.util.ToastUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.dolores.store.R.id.et_password;
 
 public class LoginActivity extends BaseActivity {
     private final String TAG=LoginActivity.class.getSimpleName();
-    @Bind(R.id.et_mobile)
+    @BindView(R.id.et_mobile)
     EditText etMobile;
-    @Bind(et_password)
+    @BindView(R.id.et_password)
     EditText etPassword;
+
     private boolean progressShow;
     private boolean autoLogin = false;
     @Override
@@ -57,35 +51,14 @@ public class LoginActivity extends BaseActivity {
         TitleUtils.setTitle(this, R.string.action_login);
     }
 
-    @OnClick({R.id.btn_sign_in, R.id.tv_register})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.btn_sign_in:
-                postLogin();
-                break;
-            case R.id.tv_register:
-                postRegister();
-                break;
-        }
-    }
-
-    private void postRegister(){
+    @OnClick(R.id.tv_register)
+    void postRegister() {
         startActivityForResult(new Intent(this, RegisterActivity.class), 0);
     }
 
-    private void postLogin() {
-        /*StringRequest request = new StringRequest(Constants.LOGIN_URL, Request.Method.POST, map, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+    @OnClick(R.id.btn_sign_in)
+    void postLogin() {
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                ToastUtils.showToast(LoginActivity.this, HttpUtil.checkErrorType(error));
-            }
-        });
-        DoloresApplication.httpClient.addRequest(request);*/
         if (!EaseCommonUtils.isNetWorkConnected(this)) {
             Toast.makeText(this, R.string.network_isnot_available, Toast.LENGTH_SHORT).show();
             return;
@@ -119,11 +92,8 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onSuccess() {
-                LogUtils.i(new StringBuffer("登录成功").toString());
-
-
-
-                // ** manually load all local groups and conversation
+                Toast.makeText(LoginActivity.this, new StringBuffer("登录成功").toString(), Toast.LENGTH_SHORT).show();
+                //TODO ** manually load all local groups and conversation
                 EMClient.getInstance().groupManager().loadAllGroups();
                 EMClient.getInstance().chatManager().loadAllConversations();
                 // update current user's display name for APNs
@@ -143,15 +113,15 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onError(int code, String error) {
+                Toast.makeText(LoginActivity.this, new StringBuffer("登录出错").append(error).toString(), Toast.LENGTH_SHORT).show();
                 if (!LoginActivity.this.isFinishing() && pd.isShowing()) {
                     pd.dismiss();
                 }
-                ToastUtils.showToast(LoginActivity.this,new StringBuffer("登录出错").append(error).toString());
             }
 
             @Override
             public void onProgress(int progress, String status) {
-
+                Toast.makeText(LoginActivity.this, new StringBuffer("登录中..").toString(), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -36,7 +36,7 @@ import com.hyphenate.util.EMLog;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.leolin.shortcutbadger.ShortcutBadger;
@@ -46,18 +46,18 @@ import me.leolin.shortcutbadger.ShortcutBadger;
  *
  * */
 public class MainActivity extends EBaseActivity {
-    @Bind(R.id.unread_msg_number)
+    @BindView(R.id.unread_msg_number)
     TextView unreadLabel;
     // textview for unread event message
-    @Bind(R.id.unread_address_number)
+    @BindView(R.id.unread_address_number)
      TextView unreadAddressLable;
-    @Bind(R.id.portal_layout)
+    @BindView(R.id.portal_layout)
     RelativeLayout portalLayout;
-    @Bind(R.id.ding_layout)
+    @BindView(R.id.ding_layout)
     RelativeLayout dingLayout;
-    @Bind(R.id.book_layout)
+    @BindView(R.id.book_layout)
     RelativeLayout bookLayout;
-    @Bind(R.id.mine_layout)
+    @BindView(R.id.mine_layout)
     RelativeLayout mineLayout;
     private PortalFragment portalFragment;
     private DingFragment dingFragment;
@@ -240,7 +240,7 @@ public class MainActivity extends EBaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         LogUtils.d("onkeydown:"+event.getRepeatCount());
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 1) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             exit();
             return true;
         }

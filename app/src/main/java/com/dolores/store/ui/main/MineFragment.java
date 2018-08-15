@@ -18,18 +18,20 @@ import com.dolores.store.lightapp.runtime.WebviewJump;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
  * @author shengfq
- * Setting Fragment
+ * 首页页签-我的
  * */
 public class MineFragment extends Fragment{
-    @Bind(R.id.btn_logout)
+    @BindView(R.id.btn_logout)
      Button logoutBtn;
 
+    @BindView(R.id.broken)
+    Button broken;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +55,20 @@ public class MineFragment extends Fragment{
         }
     }
 
-    @OnClick({R.id.btn_logout})
+    @OnClick({R.id.btn_logout, R.id.broken})
     public void onClick(View v) {
         switch (v.getId()){
             case  R.id.btn_logout:
                 logout();
                 break;
+            case R.id.broken:
+                gotobaidu();
+                break;
         }
+    }
+
+    void gotobaidu() {
+        WebviewJump.gotoNewsWebviewActivity(getActivity(), "https://www.jd.com", "haha", null);
     }
     void logout() {
         final ProgressDialog pd = new ProgressDialog(getActivity());

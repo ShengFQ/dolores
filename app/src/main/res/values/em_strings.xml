@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="app_name">dolores</string>
+    <string name="app_slogon">duola duola</string>
+    <string name="key_tracking_mode">track</string>
     <string name="webview_copy_link">copy</string>
     <string name="webview_save_image">save in phone</string>
     <string name="webview_copy_image_url">copy the link</string>
@@ -8,20 +12,9 @@
 
 
     <!-- a -->
-    <string name="action_cancel">cancel</string>
-    <string name="action_ok">ok</string>
     <string name="action_login">login</string>
-    <string name="action_register">register</string>
-    <string name="action_start">start</string>
-    <string name="action_save">save</string>
-    <string name="action_delete">delete</string>
-    <string name="action_edit">edit</string>
-    <string name="action_complete">complete</string>
 
     <!--b -->
-    <string name="banner_title_main">main zone</string>
-    <string name="banner_title_cate">cate zone</string>
-    <string name="banner_title_game">game zone</string>
     <!-- h -->
     <string name="hint_mobile">user name</string>
     <string name="hint_password">password</string>
@@ -37,8 +30,7 @@
     <!-- m -->
     <string name="msg_quit">are you exit?</string>
     <!--easeUI-->
-    <string name="app_name">dolores</string>
-    <string name="app_slogon">IM as a service</string>
+
     <string name="text_ack_msg">Read</string>
     <string name="text_delivered_msg">Delivered</string>
     <string name="back">Back</string>
@@ -70,24 +62,17 @@
     <string name="network_unavailable">The network connection is not available, please check the network</string>
     <string name="copy">Copy</string>
     <string name="forward">Forward</string>
-    <string name="recall">Recall</string>
-    <string name="msg_recall_by_self">This message has been recalled by myself</string>
     <string name="msg_recall_by_user">This message has been recalled by %1$s</string>
     <string name="button_logout">Logout</string>
     <string name="button_uploadlog">Upload the log</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string name="search_contanier">Search："%s"</string>
     <string name="prompt">Prompt</string>
     <string name="clear_records">Clear conversation?</string>
     <string name="clear_all_records">Clear all conversations？</string>
     <string name="location_recv">[%s location]</string>
     <string name="location_message">The location information</string>
     <string name="recording_video">Record video</string>
-    <string name="stop_record">Stop record</string>
-    <string name="switch_camera">Switch camera</string>
-    <string name="capture_image">Capture image</string>
-    <string name="record_finish_toast">Recording finish, file saved in %s</string>
     <string name="location_prefix">[my location]</string>
     <string name="picture">[Picture]</string>
     <string name="video">[Video]</string>
@@ -124,10 +109,7 @@
     <string name="shake">Vibrate</string>
     <string name="chatset">Chat settings</string>
     <string name="yangshengqi">Use speaker</string>
-    <string name="push_settings">Message push settings</string>
     <string name="book_black">Black list</string>
-    <string name="set_custom_appkey">Set custom App key</string>
-    <string name="set_custom_server">Set custom servers</string>
     <string name="session">Conversation</string>
     <string name="address_book">Address book</string>
     <string name="setting">Settings</string>
@@ -138,32 +120,25 @@
     <string name="group_chat">Group chat</string>
     <string name="chat_room">Channel</string>
     <string name="voice_and_video_conference">Voice and video conference</string>
-    <string name="conference_invite_error">Did not get the meeting information, can not invite other people to join</string>
     <string name="add_friend">Add friends</string>
     <string name="search">Search</string>
     <string name="black_item">Black list</string>
     <string name="diagnose">Debug</string>
     <string name="push_nick">nickname for Notification</string>
-    <string name="call_option">Call Option</string>
-    <string name="multi_device_management">Multi device management</string>
     <string name="Current_version">SDK version</string>
     <string name="Not_Set">Not set</string>
     <string name="Upload_the_log">Uploading the log</string>
     <string name="The_new_group_chat">Create new group</string>
     <string name="add_public_group_chat">Add public group</string>
     <string name="add_public_chat_room">Add public channel</string>
-    <string name="group_not_found">Can not find this group</string>
     <string name="group_name">Group name</string>
     <string name="Group_chat_profile">Group profile</string>
     <string name="Whether_the_public">Is public</string>
     <string name="Open_group_members_invited">Allow members to invite</string>
     <string name="Open_group_chat">Public groups</string>
-    <string name="join_need_owner_approval">Join need group owner approval</string>
     <string name="blacklist">Black list</string>
-    <string name="serach_group_message">Search messages</string>
     <string name="Empty_the_chat_record">Clear conversation</string>
     <string name="Shielding_of_the_message">Block message</string>
-    <string name="block_offline_group_push">Block offline push</string>
     <string name="dismiss_group">Dismiss group</string>
     <string name="Select_the_contact">Select the contact</string>
     <string name="Group_chat_information">The group description</string>
@@ -212,7 +187,6 @@
     <string name="The_other_party_did_not_answer">The peer did not answer</string>
     <string name="did_not_answer">did not answer</string>
     <string name="Has_been_cancelled">Cancelled</string>
-    <string name="call_version_inconsistent">Both call version are inconsistent</string>
     <string name="unable_to_get_loaction">Unable to get to your location information!</string>
     <string name="not_connect_to_server">Not connect to server, please try again later</string>
     <string name="sd_card_does_not_exist">"SD card does not exist, can't take pictures"</string>
@@ -227,7 +201,6 @@
     <string name="Move_into_blacklist_success">Move into blacklist success</string>
     <string name="Move_into_blacklist_failure">Move into blacklist failure</string>
     <string name="you_are_group">You have been kicked off from the group</string>
-    <string name="the_current_group">The current group has been dismissed</string>
     <string name="Cant_chat_with_yourself">cannot chat with yourself</string>
     <string name="deleting">Deleting..</string>
     <string name="Delete_failed">Failed to delete</string>
@@ -240,15 +213,9 @@
     <string name="is_quit_the_group_chat">Exiting group</string>
     <string name="chatting_is_dissolution">Dismissing group</string>
     <string name="are_empty_group_of_news">Clearing messages</string>
-    <string name="messages_are_empty">Messages has been cleared</string>
     <string name="is_modify_the_group_name">Modifying the group name..</string>
-    <string name="is_modify_the_group_description">Modifying the group description..</string>
     <string name="Modify_the_group_name_successful">Modify the group name successful</string>
-    <string name="Modify_the_group_description_successful">Modify the group description successful</string>
-    <string name="Modify_the_group_extension_successful">Modify the group extension successful</string>
     <string name="change_the_group_name_failed_please">Failed to change the group name, please check the network or try again later</string>
-    <string name="change_the_group_description_failed_please">Failed to change the group name, please check the network or try again later</string>
-    <string name="change_the_group_extension_failed_please">Failed to change the group extension, please check the network or try again later</string>
     <string name="Are_moving_to_blacklist">Moving to blacklist</string>
     <string name="failed_to_move_into">Failed to move to the blacklist, please check the network or try again later</string>
     <string name="Exit_the_group_chat_failure">Failed to exit the group:</string>
@@ -308,7 +275,6 @@
     <string name="Version_number_is_wrong">Version number is wrong</string>
     <string name="Are_connected_to_each_other">Connecting to peer..</string>
     <string name="Is_not_yet_connected_to_the_server">Not connect to server</string>
-    <string name="have_connected_with">Connected to the peer</string>
     <string name="In_the_call">In the call..</string>
     <string name="The_other_party_refused_to_accept">The call was refused</string>
     <string name="Connection_failure">Connection failed!</string>
@@ -338,8 +304,6 @@
     <string name="Delete_the_contact">Delete the contact</string>
     <string name="Move_into_the_blacklist_new">Move into the blacklist</string>
     <string name="Change_the_group_name">Change group name</string>
-    <string name="change_the_group_description">Change group description</string>
-    <string name="change_the_group_extension">Change group extension</string>
     <string name="Sync_Groups_From_Server">Sync groups with server</string>
     
     <string name="update_contact_list">Update contact list</string>
@@ -353,18 +317,7 @@
     <string name="no_more_messages">no more messages</string>
     <string name="join_public_group">Join public group</string>
     <string name="chatroom_allow_owner_leave">Allow channel owner leave</string>
-    <string name="delete_msg_when_exit_group">Delete messages when exit group</string>
-    <string name="set_transfer_file_by_userself">No need to implement transfer file function by user</string>
-    <string name="set_autodownload_thumbnail">Autodownload thumbnail or not</string>
-    <string name="auto_accept_group_invitation">Auto accept group invitation</string>
-    <string name="adaptive_video_encode">Adaptive video encode</string>
-    <string name="msg_roaming">message roaming</string>
-    <string name="offline_call_push">Offline call push</string>
-    <string name="offline_use_large_conference_mode">Large conference mode</string>
     <string name="group_id">Group ID</string>
-    <string name="group_announcement">Announcement</string>
-    <string name="share_files">Shared Files</string>
-    <string name="upload_files">Upload</string>
     <string name="move_out_backlist">Remove from blacklist</string>
     <string name="input_new_nick_hint">Input a new nickname</string>
     <string name="search_pubic_group">Search public group</string>
@@ -396,38 +349,10 @@
     <string name="toast_updatephoto_success">update photo success!</string>
     <string name="toast_updatephoto_fail">update photo fail!</string>
     <string name="user_already_in_contactlist">This user already is your friend, only need remove out from the black list</string>
-    <string name="group_nick">Group Nickname:</string>
-    <string name="group_owner">Group Owner:</string>
-    <string name="user_removed_from_group">You are removed from the group</string>
 
     <string name="register_exceed_service_limit">You have exceeded the limit of the community edition,Please upgrade to the enterprise edition</string>
-    
-    <string name="network_unstable">Network unstable</string>
-    <string name="no_call_data">No call data</string>
 
     <!-- lint -->
-    <string name="delete_contact">Delete contact</string>
-    <string name="push_no_disturb">Push no disturb</string>
-    <string name="push_no_disturb_on">On</string>
-    <string name="push_only_on">On only from 10pm to 7am</string>
-    <string name="push_no_disturb_off">Off</string>
-    <string name="push_saving_settings">Saving settings</string>
-    <string name="push_save_failed">Save settings failed</string>
-    <string name="loading_more">loading more…</string>
-
-    <string name="destroy_chatroom">Destroy the chatroom</string>
-    <string name="chatroom_subject">Chat room subject</string>
-    <string name="change_chatroom_subject">change chat room subject</string>
-    <string name="change_chatroom_description">change chat room description</string>
-    <string name="chat_room_nick">name: </string>
-    <string name="is_quit_the_chat_room">is quit chat room?</string>
-    <string name="chat_room_id">chat room ID</string>
-    <string name="The_new_chat_room">Create new chat room</string>
-    <string name="chat_room_name">Chat room name</string>
-    <string name="chat_room_description">Chat room description</string>
-    <string name="Failed_to_create_chat_room">Failed to create chat room</string>
-
-    <string name="mail_log_title">Send mail, contain logs</string>
 
     <string name="multi_device_contact_accept">Accept contact %s in other device</string>
     <string name="multi_device_contact_decline">Decline contact %s in other device</string>
@@ -458,20 +383,4 @@
     <string name="multi_device_group_add_mute">Mute %s from group [remote]</string>
     <string name="multi_device_group_remove_mute">UnMute %s from group [remote]</string>
 
-    <string name="multi_device_logged_in_device_kick_item">kick online device</string>
-
-    <string name="sdk_service_check">SDK service check</string>
-    <string name="btn_service_check">CHECK</string>
-    <string name="check_service_start">Start check\n</string>
-    <string name="check_result_account_validate_fail">Account validate failed%1$s%2$s</string>
-    <string name="check_result_get_dns_list_fail">Get DNS list from server failed%1$s%2$s</string>
-    <string name="check_result_get_token_fail">Get token from server failed%1$s%2$s</string>
-    <string name="check_result_login_fail">Login failed%1$s%2$s</string>
-    <string name="check_result_msg_send_fail">Message send failed%1$s%2$s</string>
-    <string name="check_result_logout_fail">Logout failed%1$s%2$s</string>
-    <string name="check_result_get_dns_list_success">Get DNS list from server success</string>
-    <string name="check_result_get_token_success">Get token from server success</string>
-    <string name="check_result_login_success">Login success</string>
-    <string name="check_result_msg_send_success">Message send success</string>
-    <string name="check_result_logout_success">Logout success</string>
 </resources>

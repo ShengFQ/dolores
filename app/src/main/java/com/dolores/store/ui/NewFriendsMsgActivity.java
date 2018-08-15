@@ -1,6 +1,4 @@
-/**
- * Copyright (C) 2016 Hyphenate Inc. All rights reserved.
- */
+
 package com.dolores.store.ui;
 
 import android.os.Bundle;

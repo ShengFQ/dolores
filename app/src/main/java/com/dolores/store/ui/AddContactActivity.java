@@ -20,20 +20,21 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.ui.EaseBaseActivity;
 import com.hyphenate.easeui.widget.EaseAlertDialog;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 /**
+ * @author shenfq
  * 搜索方式添加联系人
  * */
 public class AddContactActivity extends EBaseActivity {
-    @Bind(R.id.edit_note)
-	 EditText editText;
-    @Bind(R.id.ll_user)
-	 RelativeLayout searchedUserLayout;
-    @Bind(R.id.name)
-	 TextView nameText;
-    @Bind(R.id.search)
-	 Button searchBtn;
+    @BindView(R.id.edit_note)
+    EditText editText;
+    @BindView(R.id.ll_user)
+    RelativeLayout searchedUserLayout;
+    @BindView(R.id.name)
+    TextView nameText;
+    @BindView(R.id.search)
+    Button searchBtn;
 	private String toAddUsername;
 	private ProgressDialog progressDialog;
 

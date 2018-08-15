@@ -29,7 +29,8 @@ import java.util.Map;
 import butterknife.ButterKnife;
 /**
  * ContactList Fragment
- * 联系人页签
+ * @author shengfq
+ * 首页页签-联系人页签
  * */
 public class BookFragment extends EaseContactListFragment {
     private static final String TAG = BookFragment.class.getSimpleName();
